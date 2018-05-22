@@ -1,0 +1,242 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>Forum</h3>
+      <hr/>
+    </div>
+  </div>
+  <div class="row">
+    <!--Left side content-->
+    <div class="col-md-8 col-xs-12">
+      <!--Seach bar-->
+      <div class="form-group row">
+        <div class="pull-right">
+          <button type="button" class="btn btn-primary ask-question" data-toggle="modal" data-target="#askQuestion-modal">Ask Question</button>
+        </div>
+        <div class="col-xs-12 col-md-3 pull-right">
+          <div class="right-inner-addon ">
+            <i class="glyphicon glyphicon-search"></i>
+            <input type="search" class="form-control" placeholder="Search question" />
+          </div>
+        </div>
+      </div>
+      <!--Questions-->
+      <br/>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="recent-questions">
+            <div class="question">
+              I have a div container and a span container very close to each other (span on the left, div on the right) ?
+            </div>
+            <small class="form-text text-muted">
+              <a>Kiran cse</a>
+            </small>
+            <small class="form-text text-muted">21/5/2018 10:00 AM</small>
+            <div class="description">
+              I create youtube video convert api but download now button press this video convert proper but not save file only play on
+              player on browser in php script.
+              <a>image</a>
+            </div>
+            <div class="question-footer">
+              <div class="rec-likes">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-dislikes">
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-commentts">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                232
+              </div>
+            </div>
+            <div class="tags">
+              Tags:
+              <span>Html, css, Javascript </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="recent-questions">
+            <div class="question">
+              I have a div container and a span container very close to each other (span on the left, div on the right) ?
+            </div>
+            <div class="description">
+              I create youtube video convert api but download now button press this video convert proper but not save file only play on
+              player on browser in php script.
+              <a>image</a>
+            </div>
+            <div class="question-footer">
+              <div class="rec-likes">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-dislikes">
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-commentts">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                232
+              </div>
+            </div>
+            <div class="tags">
+              Tags:
+              <span>Html, css, Javascript </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="recent-questions">
+            <div class="question">
+              I have a div container and a span container very close to each other (span on the left, div on the right) ?
+            </div>
+            <div class="description">
+              I create youtube video convert api but download now button press this video convert proper but not save file only play on
+              player on browser in php script.
+              <a>image</a>
+            </div>
+            <div class="question-footer">
+              <div class="rec-likes">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-dislikes">
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                232
+              </div>
+              <div class="rec-commentts">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                232
+              </div>
+            </div>
+            <div class="tags">
+              Tags:
+              <span>Html, css, Javascript </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="pagination pull-right">
+            <li class="active">
+              <a href="#">1</a>
+            </li>
+            <li>
+              <a href="#">2</a>
+            </li>
+            <li>
+              <a href="#">3</a>
+            </li>
+            <li>
+              <a href="#">4</a>
+            </li>
+            <li>
+              <a href="#">5</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Right side content-->
+    <div class="col-md-4">
+      <div class="right-tab">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">Popular Questions</div>
+              <div class="panel-body">
+                <div class="popular-questions">
+                  <div class="popular-question">
+                    <a>I have a div container and a span container very close to each other (span on the left, div on the right)</a>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="popular-footer">
+                        <div id="likes">
+                          <span class="label label-primary">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                        <div id="dislikes">
+                          <span class="label label-danger">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                        <div id="comments">
+                          <span class="label label-primary">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="askQuestion-modal" data-backdrop="static" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title askQuestion-title">Ask Question</h4>
+      </div>
+      <form [formGroup]="askQuesForm" (submit)="askQuestion()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="question-title">Question Title</label>
+            <input type="text" class="form-control" id="question-title" formControlName="questionTitle" aria-describedby="questionlHelp"
+              placeholder="Write question title here">
+            <small id="questionlHelp" class="form-text text-muted">Please check previous questions and ask!</small>
+          </div>
+          <div class="form-group">
+            <label for="question-description">Question Description</label>
+            <textarea class="form-control" id="question-description" formControlName="questionDescription" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reference-images">Reference Images</label>
+            <!-- <div class="drop-zone">
+              <div class="drop-zone-title">
+                <span class="darg-drop">Drag and drop to Upload or</span>&nbsp; 
+                <span class="click-here">Click Here</span> 
+              </div>
+            </div> -->
+            <input type="file" id="ref-images" style="display: none" (change)="handleFileSelect($event)" />
+            <div class="row">
+              <div class="col-md-12">
+                <div onclick="document.getElementById('ref-images').click()">
+                  <img *ngIf="base64textString" class="upload-image" [src]="'data:image/jpg;base64,'+base64textString" />
+                  <i *ngIf="!base64textString" class="fa fa-picture-o fa-3x" aria-hidden="true"></i>
+                  <br/>
+                  <a *ngIf="!base64textString">Click Here to Upload</a>
+                </div>
+                <a *ngIf="base64textString" (click)="deleteImage()">Delete Image</a>
+              </div>
+            </div>
+            <!-- <small id="fileHelp" class="form-text text-muted">You can select upto 5 images</small> -->
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" formControlName="askAnonymously"> Ask anonymously
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" [disabled]="!askQuesForm.valid" class="btn btn-success ask-save">Ask</button>
+          <button type="button" class="btn btn-default ask-close" data-dismiss="modal">Close</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

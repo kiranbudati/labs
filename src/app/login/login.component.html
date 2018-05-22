@@ -1,0 +1,51 @@
+<div class="bg-color">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <img class="logo" src="../../assets/logo.png">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <hr/>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-6">
+
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-6 left-border">
+            <div class="row login">
+              <div class="col-md-12">
+                <h3>Login</h3>
+              </div>
+              <div class="col-md-12">
+                <div class="panel">
+                  <div class="panel-body">
+                    <div *ngIf="message!=null" [ngClass]="{'success':message.success==true,'error':message.success==false}">{{message.message}}</div>
+                    <form [formGroup]="loginForm" (submit)="login()">
+                      <div class="form-group">
+                        <label for="hallticket">Hallticket No.</label>
+                        <input type="text" class="form-control"  formControlName="hallticket" placeholder="Enter Hallticket No.">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control"  formControlName="password" placeholder="Enter Password">
+                        <a href="#" class="pull-right forgot-password">Forgot Password ?</a>
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-lg btn-block">Login</button>
+                      </div>
+                    </form>
+                    <div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr/>
+      </div>
+    </div>
+  </div>
+</div>

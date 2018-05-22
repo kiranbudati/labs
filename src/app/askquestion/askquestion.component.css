@@ -1,0 +1,69 @@
+.ask-save, .ask-save:active, .ask-save:focus, .ask-save:hover{
+    background-color: #1e57c8;
+    border-color: #789ade;
+}
+.ask-close, .ask-close:active, .ask-close:focus, .ask-close:hover{
+    background-color: #fb2e01;
+    border-color: #fc8166;
+    color: #fff;
+}
+.click-here{
+    color: #1e57c8;
+    text-decoration: underline;
+}
+.upload-image{
+    max-height: 300px;
+    width: 100%;
+}
+.upload-image:hover{
+    background-color: #ddd;
+}
+.tags{
+    /* background: #f5f5f5; */
+    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+    padding: 8px 15px;
+}
+.domain{
+    font-size: 16px;
+    font-weight: bold;
+    color: #081735;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 3px;
+}
+.sub-domain{
+    font-size: 12px;
+    font-weight: bold;
+    color: #081735;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 3px;
+}
+.badge{
+    margin-left: 2px;
+    margin-top: 2px;
+    color: #777;
+    border: 1px solid #777;
+    background-color: #fff;
+    cursor: pointer;
+    line-height: 1.5;
+}
+.badge:hover, .selected-domain, .selected-subdomain {
+    color: #fff;
+    background: #1e57c8;
+    border: 1px solid #fff;
+}
+.message{
+    font-size: 14px;
+    font-weight: bold;
+    color: green;
+    text-align: center;
+
+    /* padding: 10px; */
+}
+.back-to {
+    text-align: right;
+}
+a {
+    cursor: pointer;
+}

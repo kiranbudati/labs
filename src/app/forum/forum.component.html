@@ -1,0 +1,134 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Forum</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <!--Left side content-->
+    <div class="col-md-8 col-xs-12">
+      <!--Seach bar-->
+      <div class="form-group row">
+        <div class="pull-right">
+          <button type="button" class="btn btn-primary ask-question" (click)="askQuestionPgae()">Ask Question</button>
+        </div>
+        <div class="col-xs-12 col-md-3 pull-right">
+          <div class="right-inner-addon ">
+            <i class="glyphicon glyphicon-search"></i>
+            <input type="search" class="form-control" (input)="searchQuestion($event.target.value)" placeholder="Search question" />
+          </div>
+        </div>
+      </div>
+      <!--Questions-->
+      <br/>
+      <div class="row">
+        <div class="col-md-12" *ngIf="!allQuestions">No Questions Found</div>
+        <div *ngIf="allQuestions">
+          <div class="col-md-12" *ngFor="let question of pagedItems | reverse">
+            <div class="recent-questions">
+              <div class="question">{{question.questionTitle}}</div>
+              <small class="form-text text-muted">
+                <a *ngIf="question.askAnonymously==true">Anonymous</a>&nbsp;
+                <a *ngIf="question.askAnonymously==false">{{question.askedBy}}</a>&nbsp;
+              </small>
+              <small class="form-text text-muted">{{question.createdAt | date}}</small>
+              <div class="description">
+                {{question.questionDescription}}
+              </div>
+              <div class="question-footer">
+                <div class="rec-likes">
+                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                  <span *ngIf="question.likes!=0">{{question.likes}}</span>
+                </div>
+                <div class="rec-dislikes">
+                  <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                  <span *ngIf="question.dislikes!=0">{{question.dislikes}}</span>
+                </div>
+                <div class="rec-commentts">
+                  <i class="fa fa-comments-o" aria-hidden="true"></i>
+                  <span *ngIf="question.likes!=0">{{question.likes}}</span>
+                </div>
+              </div>
+              <div class="tags">
+                Domain:
+                <span>{{question.domain}} </span>
+
+                Sub Domain:
+                <span>{{question.subDomain}} </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a (click)="setPage(pager.totalPages)">Last</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--Right side content-->
+    <div class="col-md-4">
+      <div class="right-tab">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">Popular Questions</div>
+              <div class="panel-body">
+                <div class="popular-questions">
+                  <div class="popular-question">
+                    <a>I have a div container and a span container very close to each other (span on the left, div on the right)</a>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="popular-footer">
+                        <div id="likes">
+                          <span class="label label-primary">
+                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                        <div id="dislikes">
+                          <span class="label label-danger">
+                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                        <div id="comments">
+                          <span class="label label-primary">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            232
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

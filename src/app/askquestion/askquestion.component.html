@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a routerLink="/forum">Forum</a>
+        </li>
+        <li class="breadcrumb-item active">Ask Question</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="message" *ngIf="quesRes">{{quesRes.message}}</div>
+      <div class="back-to">
+        <a routerLink="/forum" class="">Back to Forum</a>
+      </div>
+      <form [formGroup]="askQuesForm" (submit)="askQuestion()">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="question-title">Question Title</label>
+            <input type="text" class="form-control" id="question-title" formControlName="questionTitle" aria-describedby="questionlHelp"
+              placeholder="Write question title here">
+            <small id="questionlHelp" class="form-text text-muted">Please check previous questions and ask!</small>
+          </div>
+          <div class="form-group">
+            <label for="question-description">Question Description</label>
+            <textarea class="form-control" id="question-description" formControlName="questionDescription" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="reference-images">Reference Images</label>
+            <!-- <div class="drop-zone">
+                  <div class="drop-zone-title">
+                    <span class="darg-drop">Drag and drop to Upload or</span>&nbsp; 
+                    <span class="click-here">Click Here</span> 
+                  </div>
+                </div> -->
+            <input type="file" id="ref-images" style="display: none" (change)="handleFileSelect($event)" />
+            <div class="row">
+              <div class="col-md-12">
+                <div onclick="document.getElementById('ref-images').click()">
+                  <img *ngIf="base64textString" class="upload-image" [src]="'data:image/jpg;base64,'+base64textString" />
+                  <i *ngIf="!base64textString" class="fa fa-picture-o fa-3x" aria-hidden="true"></i>
+                  <br/>
+                  <a *ngIf="!base64textString">Click Here to Upload</a>
+                </div>
+                <a *ngIf="base64textString" (click)="deleteImage()">Delete Image</a>
+              </div>
+            </div>
+            <!-- <small id="fileHelp" class="form-text text-muted">You can select upto 5 images</small> -->
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" checked="false" formControlName="askAnonymously"> Ask anonymously
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <button type="submit" [disabled]="!askQuesForm.valid" class="btn btn-success ask-save">Ask</button>
+            <button type="button" class="btn btn-default ask-close" data-dismiss="modal">Close</button>
+          </div>
+          <div class="col-md-8">
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <div class="tags">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="domain">Domain</div>
+            <div class="domains">
+              <span class="badge badge-secondary domain-badge" [ngClass]="{'selected-domain': selectedDomain===domain.domain}" *ngFor="let domain of domains | unique"
+                (click)="getSubdomain(domain.domain)">{{domain.domain}}</span>
+            </div>
+            <div class="sub-domain">Sub Domain</div>
+            <div class="domains">
+              <div *ngIf="!subdomain">Please select Domain first</div>
+              <span class="badge badge-secondary" *ngFor="let sub of subdomain" [ngClass]="{'selected-subdomain': selectedSubDomain.indexOf(sub.subDomain)!==-1}"
+                (click)="selectSubDomain(sub.subDomain)">{{sub.subDomain}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
