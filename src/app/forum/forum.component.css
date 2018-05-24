@@ -48,6 +48,9 @@ a{
 #popular-footer{
     margin:0;
 }
+.p-question{
+    margin-bottom: 10px;
+}
 #likes{
     float:left;
     width:25%;

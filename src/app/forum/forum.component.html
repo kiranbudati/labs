@@ -25,20 +25,20 @@
         </div>
       </div>
       <!--Questions-->
-      <br/>
+      <br/> 
       <div class="row">
         <div class="col-md-12" *ngIf="!allQuestions">No Questions Found</div>
         <div *ngIf="allQuestions">
           <div class="col-md-12" *ngFor="let question of pagedItems | reverse">
             <div class="recent-questions">
-              <div class="question">{{question.questionTitle}}</div>
+              <div class="question"><a (click)="viewQuestion(question._id)">{{question.questionTitle}}</a></div>
               <small class="form-text text-muted">
                 <a *ngIf="question.askAnonymously==true">Anonymous</a>&nbsp;
                 <a *ngIf="question.askAnonymously==false">{{question.askedBy}}</a>&nbsp;
               </small>
               <small class="form-text text-muted">{{question.createdAt | date}}</small>
-              <div class="description">
-                {{question.questionDescription}}
+              <div class="description" [innerHTML]="question.questionDescription">
+                <!-- {{question.questionDescription}} -->
               </div>
               <div class="question-footer">
                 <div class="rec-likes">
@@ -96,29 +96,33 @@
               <div class="panel-heading">Popular Questions</div>
               <div class="panel-body">
                 <div class="popular-questions">
-                  <div class="popular-question">
-                    <a>I have a div container and a span container very close to each other (span on the left, div on the right)</a>
-                  </div>
                   <div class="row">
-                    <div class="col-md-12">
-                      <div id="popular-footer">
-                        <div id="likes">
-                          <span class="label label-primary">
-                            <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                            232
-                          </span>
-                        </div>
-                        <div id="dislikes">
-                          <span class="label label-danger">
-                            <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                            232
-                          </span>
-                        </div>
-                        <div id="comments">
-                          <span class="label label-primary">
-                            <i class="fa fa-comments-o" aria-hidden="true"></i>
-                            232
-                          </span>
+                    <div class="col-md-12 p-question" *ngFor="let question of allQuestions | slice:0:5;">
+                      <div class="popular-question">
+                        <a>{{question.questionTitle}}</a>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div id="popular-footer">
+                            <div id="likes">
+                              <span class="label label-primary">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                {{question.likes}}
+                              </span>
+                            </div>
+                            <div id="dislikes">
+                              <span class="label label-danger">
+                                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                                {{question.dislikes}}
+                              </span>
+                            </div>
+                            <div id="comments">
+                              <span class="label label-primary">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                {{question.dislikes}}
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>

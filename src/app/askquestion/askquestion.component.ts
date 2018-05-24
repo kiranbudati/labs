@@ -15,6 +15,14 @@ export class AskquestionComponent implements OnInit {
   domains: any; subdomain: any;
   selectedDomain: String; selectedSubDomain: any = [];
   quesRes: any;
+  public options: Object = {
+    charCounterCount: true,
+    quickInsertButtons: [],
+    toolbarButtons: ['bold', 'italic', 'underline','subscript', 'superscript','|', 'paragraphStyle', '|', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'insertLink', 'insertTable', '|', 'quote', 'selectAll', 'html'],
+    toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+    toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+    toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+  };
   constructor(private fb: FormBuilder,
     private authService: AuthService,
     private appService: AppService,

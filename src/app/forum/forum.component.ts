@@ -29,14 +29,18 @@ export class ForumComponent implements OnInit {
     this.router.navigate(['/forum/ask_question', this.userId]);
   }
   searchQuestion(eve: string) {
-   this.pagedItems = this.seachPipe.transform(this.allQuestions, eve);
-   this.pager = this.pagerService.getPager(this.pagedItems.length, 1);
+    this.pagedItems = this.seachPipe.transform(this.allQuestions, eve);
+    this.pager = this.pagerService.getPager(this.pagedItems.length, 1);
   }
   setPage(page: number) {
     // get pager object from service
     this.pager = this.pagerService.getPager(this.allItems.length, page);
     // get current page of items
     this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+  }
+  viewQuestion(id) {
+    console.log(id);
+    this.router.navigate(['/forum/view_question', id]);
   }
   ngOnInit() {
     this.appService.getQuestions().subscribe((res) => {

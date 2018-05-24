@@ -4,6 +4,8 @@ import { appRouters } from './app-routing.module';
 import { RouterModule, Route, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
 import { ComponentsComponent } from './components/components.component';
@@ -23,6 +25,7 @@ import { ReversePipe } from './pipes/reverse.pipe';
 import { AskquestionComponent } from './askquestion/askquestion.component';
 import { UniquePipe } from './pipes/unique.pipe';
 import { SearchPipe } from './pipes/search.pipe';
+import { ViewquestionComponent } from './viewquestion/viewquestion.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { SearchPipe } from './pipes/search.pipe';
     AskquestionComponent,
     UniquePipe,
     SearchPipe,
+    ViewquestionComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +49,8 @@ import { SearchPipe } from './pipes/search.pipe';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
   ],
   exports: [
     NavbarComponent,

@@ -24,20 +24,17 @@
             <label for="question-title">Question Title</label>
             <input type="text" class="form-control" id="question-title" formControlName="questionTitle" aria-describedby="questionlHelp"
               placeholder="Write question title here">
+
             <small id="questionlHelp" class="form-text text-muted">Please check previous questions and ask!</small>
           </div>
           <div class="form-group">
             <label for="question-description">Question Description</label>
-            <textarea class="form-control" id="question-description" formControlName="questionDescription" rows="3"></textarea>
+            <div [froalaEditor]="options" formControlName="questionDescription">Hello, Froala!</div>
+
+            <!-- <textarea class="form-control" id="question-description" formControlName="questionDescription" rows="3"></textarea> -->
           </div>
           <div class="form-group">
             <label for="reference-images">Reference Images</label>
-            <!-- <div class="drop-zone">
-                  <div class="drop-zone-title">
-                    <span class="darg-drop">Drag and drop to Upload or</span>&nbsp; 
-                    <span class="click-here">Click Here</span> 
-                  </div>
-                </div> -->
             <input type="file" id="ref-images" style="display: none" (change)="handleFileSelect($event)" />
             <div class="row">
               <div class="col-md-12">

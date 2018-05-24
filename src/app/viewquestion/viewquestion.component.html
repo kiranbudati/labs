@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a routerLink="/forum">Forum</a>
+        </li>
+        <li class="breadcrumb-item active">View Question</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8" *ngIf="question!=null">
+      <div class="question-main">
+        <div class="question-body">
+          <div class="question">{{question.questionTitle}}</div>
+          <div class="question-user">
+            <small class="form-text text-muted">
+              <a *ngIf="question.askAnonymously">Anonymous</a>&nbsp;
+              <a *ngIf="!question.askAnonymously">{{question.askedBy}}</a>&nbsp;
+            </small>
+            <small class="form-text text-muted">{{question.createdAt | date}}</small>
+          </div>
+          <div class="question-desc">{{question.questionDescription}}</div>
+          <div class="question-image-body" *ngIf="question.questionImage!==null">
+            <img class="question-image" [src]="'data:image/jpg;base64,'+ question.questionImage" />
+          </div>
+        </div>
+        <div class="ques-action">
+          <div class="row">
+            <div class="col-md-3 col-xs-3">
+              <div class="ques-items" (click)="doLike(1)">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like
+                <span *ngIf="question.likes">({{question.likes}})</span>
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-3">
+              <div class="ques-items" (click)="doLike(2)">
+                <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike
+                <span *ngIf="question.dislikes">({{question.dislikes}})</span>
+
+              </div>
+            </div>
+            <div class="col-md-3 col-xs-4">
+              <div class="ques-items" [ngClass]="{'ques-comment':vComment}" (click)="viewComment()">
+                <i class="fa fa-comments-o" aria-hidden="true"></i> Comment
+                <span *ngIf="question.comments">({{question.comments}})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="question-footer" *ngIf="vComment">
+        <div class="comments">
+          <div class="row">
+            <div class="col-md-12 comment-body" *ngFor="let comment of comments">
+              <div class="commentedBy">{{comment.commentedBy}}</div>
+              <div class="comment">{{comment.comment}}</div>
+              <div class="comment-footer">
+                <small class="edit">
+                  <a>edit</a>
+                </small> &nbsp;
+                <small class="edit">
+                  <a>delete</a>
+                </small>
+                <small class="createdAt pull-right">{{comment.createdAt | date}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

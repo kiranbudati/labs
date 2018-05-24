@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 
-const commentSchema = new Schema({
+const likesSchema = new Schema({
     userId: {
         type: String,
         default: null
@@ -12,14 +12,16 @@ const commentSchema = new Schema({
         type: String,
         default: null
     },
-    commentedBy: {
-        type: String,
+    like: {
+        type: Boolean,
+        default: false
     },
-    comment: {
-        type: String,
+    dislike: {
+        type: Boolean,
+        default: false
     },
 },
     {
         timestamps: true
     });
-module.exports = mongoose.model('Comment', commentSchema);
+module.exports = mongoose.model('LikesAndDislikes', likesSchema);

@@ -9,21 +9,28 @@ export class SearchPipe implements PipeTransform {
     if (value) {
       return value.filter((item) => {
         if (item.domain) {
-          if (item.domain.indexOf(args) !== -1) {
+          if (item.domain.toLowerCase().indexOf(args.toLowerCase()) !== -1) {
             return item;
-          } else if (item.questionTitle.indexOf(args) !== -1) {
+          } else if (item.questionTitle.toLowerCase().indexOf(args.toLowerCase()) !== -1) {
             return item;
-          } else if (item.questionDescription.indexOf(args) !== -1) {
+          } else if (item.questionDescription.toLowerCase().indexOf(args.toLowerCase()) !== -1) {
             return item;
-          } else if (item.subDomain) {
-            console.log(item.subDomain.filter(x => {
-              if (x.indexOf(args) !== 0) {
-                return item;
-              }
-            }));
-    }
-  }
-});
+          } else if (item.subDomain.indexOf(args) !== -1) {
+            return item;
+            // if (item.subDomain.indexOf(args) !== -1) {
+            //   return item;
+            // }
+            // this.domains = item.subDomain.filter(x => {
+            //   return x;
+            //   // if (x.indexOf(args) !== -1) {
+            //   //   return item;
+            //   // }
+            // });
+            // console.log(this.domains);
+            // return this.domains;
+          }
+        }
+      });
     }
     // for (let i = 0; i < value.length; i++) {
     //   if (value[i].domain === args) {
