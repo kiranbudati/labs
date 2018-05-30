@@ -12,8 +12,8 @@
       </ol>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-8" *ngIf="question!=null">
+  <div class="row" *ngIf="question!=null">
+    <div class="col-md-8">
       <div class="question-main">
         <div class="question-body">
           <div class="question">{{question.questionTitle}}</div>
@@ -32,22 +32,22 @@
         <div class="ques-action">
           <div class="row">
             <div class="col-md-3 col-xs-3">
-              <div class="ques-items" (click)="doLike(1)">
+              <div class="ques-items" [ngClass]="{'like':like}" (click)="doLike(1)">
                 <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like
-                <span *ngIf="question.likes">({{question.likes}})</span>
+                <span *ngIf="likesCount">({{likesCount}})</span>
               </div>
             </div>
             <div class="col-md-3 col-xs-3">
-              <div class="ques-items" (click)="doLike(2)">
+              <div class="ques-items" [ngClass]="{'dislike':disLike}" (click)="doLike(2)">
                 <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike
-                <span *ngIf="question.dislikes">({{question.dislikes}})</span>
+                <span *ngIf="disLikesCount">({{disLikesCount}})</span>
 
               </div>
             </div>
             <div class="col-md-3 col-xs-4">
               <div class="ques-items" [ngClass]="{'ques-comment':vComment}" (click)="viewComment()">
                 <i class="fa fa-comments-o" aria-hidden="true"></i> Comment
-                <span *ngIf="question.comments">({{question.comments}})</span>
+                <span *ngIf="commentCount">({{commentCount}})</span>
               </div>
             </div>
           </div>
@@ -56,17 +56,29 @@
       <div class="question-footer" *ngIf="vComment">
         <div class="comments">
           <div class="row">
-            <div class="col-md-12 comment-body" *ngFor="let comment of comments">
+            <div class="col-md-12 col-xs-12 comment-body" *ngFor="let comment of comments">
               <div class="commentedBy">{{comment.commentedBy}}</div>
               <div class="comment">{{comment.comment}}</div>
               <div class="comment-footer">
-                <small class="edit">
-                  <a>edit</a>
-                </small> &nbsp;
-                <small class="edit">
-                  <a>delete</a>
-                </small>
-                <small class="createdAt pull-right">{{comment.createdAt | date}}</small>
+                <span *ngIf="comment.userId === currentUserId">
+                  <small class="edit">
+                    <a (click)="editComment(comment._id,comment.comment)" data-toggle="modal" data-target="#editComment">edit</a>
+                  </small> &nbsp;
+                  <small class="edit">
+                    <a (click)="delComment(comment._id)">delete</a>
+                  </small>
+                </span>
+                <span>
+                  <small class="createdAt pull-right">{{comment.createdAt | date:'short'}}</small>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <hr>
+            </div>
+            <div class="col-md-12 col-xs-12">
+              <div class="form-group" (keydown)="addComment($event)">
+                <textarea class="form-control" [(ngModel)]="commentField" id="exampleTextarea" rows="2" placeholder="Comment here"></textarea>
               </div>
             </div>
           </div>
@@ -74,6 +86,39 @@
       </div>
     </div>
     <div class="col-md-4">
+      <div class="related-ques">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="related-ques-head">
+              Retaled Questions
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="reated-ques-body" *ngFor="let ques of relatedQuestions">
+              <a (click)="viewQuestion(ques._id)">{{ques.questionTitle}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+  <div class="modal fade" data-backdrop="static" data-keyboard="false" id="editComment" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Comment</h4>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <textarea class="form-control" [(ngModel)]="editcommentField" rows="2" placeholder="Comment here"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" (click)="updateComment(null)">Update</button>
+          <button type="button" class="btn btn-default" (click)="editComment(null,null)" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

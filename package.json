@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "nodemon server",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -30,6 +30,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "mydatepicker": "^2.6.3",
     "ngx-editor": "^3.3.0",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"

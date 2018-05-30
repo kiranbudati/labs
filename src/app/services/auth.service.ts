@@ -12,8 +12,8 @@ export class AuthService {
   authToken; user; options;
 
   constructor(private http: HttpClient, private router: Router) {
-    // this.URL = 'https://h-labs.herokuapp.com/api';
-    this.URL = 'http://localhost:3000/api';
+    this.URL = 'https://h-labs.herokuapp.com/api';
+    // this.URL = 'http://localhost:3000/api';
   }
   login(data) {
     return this.http.post(this.URL + '/authentication/login', data);
@@ -22,6 +22,9 @@ export class AuthService {
     this.http.post(this.URL + '/authentication/register', data).subscribe((res) => {
       console.log(res);
     });
+  }
+  updateUser(id, data) {
+    return this.http.put(this.URL + '/authentication/update', { id, data });
   }
   createAuthHeaders() {
     this.loadToken();

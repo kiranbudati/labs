@@ -1,7 +1,7 @@
 <div class="bg-color">
-  <div class="container">
+  <div class="container" *ngIf="signupStatus==='complete'">
     <div class="row">
-      <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="col-md-12 col-xs-12">
         <img class="logo" src="../../assets/logo.png">
       </div>
     </div>
@@ -9,10 +9,10 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <hr/>
         <div class="row">
-          <div class="col-md-6 col-sm-6 col-xs-6">
+          <div class="col-md-6 col-sm-6 col-xs-12 left-content">
 
           </div>
-          <div class="col-md-6 col-sm-6 col-xs-6 left-border">
+          <div class="col-md-6 col-sm-12 col-xs-12 left-border">
             <div class="row login">
               <div class="col-md-12">
                 <h3>Login</h3>
@@ -24,15 +24,19 @@
                     <form [formGroup]="loginForm" (submit)="login()">
                       <div class="form-group">
                         <label for="hallticket">Hallticket No.</label>
-                        <input type="text" class="form-control"  formControlName="hallticket" placeholder="Enter Hallticket No.">
+                        <input type="text" class="form-control" [ngClass]="{'invalid-input':loginForm.controls.hallticket.invalid}" formControlName="hallticket"
+                          placeholder="Enter Hallticket No.">
+                        <small class="form-text text-muted" *ngIf="loginForm.controls.hallticket.invalid">Please check Hallticket number</small>
                       </div>
                       <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control"  formControlName="password" placeholder="Enter Password">
+                        <input type="password" class="form-control" formControlName="password" [ngClass]="{'invalid-input':loginForm.controls.password.invalid}"
+                          placeholder="Enter Password">
+                        <small class="form-text text-muted" *ngIf="loginForm.controls.password.invalid">Please check password</small>
                         <a href="#" class="pull-right forgot-password">Forgot Password ?</a>
                       </div>
                       <div class="form-group">
-                          <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-lg btn-block">Login</button>
+                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary btn-lg btn-block">Login</button>
                       </div>
                     </form>
                     <div>
@@ -46,6 +50,103 @@
         </div>
         <hr/>
       </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="signupStatus === 'incomplete'">
+    <div class="signup-complete">
+      <div class="row">
+        <div class="col-md-6 col-xs-12">
+          <div class="reg-title">Complete Registration</div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <div class="pull-right user-hal">Hallticket: {{checkUser.hallticket}}</div>
+        </div>
+      </div>
+      <hr>
+      <form [formGroup]="singupForm" (submit)="update()">
+        <div class="row">
+          <div class="col-md-6 col-xs-12">
+            <div class="personal-details">Personal Details</div>
+            <div class="row">
+              <div class="col-md-12 col-xs-12">
+                <div class="personal-body">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" formControlName="email" id="email" [ngClass]="{'invalid-input':singupForm.controls.email.invalid}"
+                      placeholder="Enter email">
+                    <div *ngIf="singupForm.controls['email'].errors && !singupForm.controls['email'].pristine" class="error-msg">
+                      <div [hidden]="!singupForm.controls['email'].errors.required" class="error-msg">Email is required.</div>
+                      <div [hidden]="!singupForm.controls['email'].errors.patternInvalid" class="error-msg">Email is invalid.</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="fullname">Fullname</label>
+                    <input type="text" class="form-control" formControlName="fullname" id="fullname" [ngClass]="{'invalid-input':singupForm.controls.fullname.invalid}"
+                      placeholder="Enter Fullname">
+                    <div *ngIf="singupForm.controls['fullname'].errors && !singupForm.controls['fullname'].pristine" class="error-msg">
+                      <div [hidden]="!singupForm.controls['fullname'].errors.required" class="error-msg">Fullname is required.</div>
+                      <div [hidden]="!singupForm.controls['fullname'].errors.minlength" class="error-msg">Fullname must be greater than 4 letters.</div>
+                      <div [hidden]="!singupForm.controls['fullname'].errors.maxlength" class="error-msg">Fullname must be less than 25 letters.</div>
+                      <div [hidden]="!singupForm.controls['fullname'].errors.pattern" class="error-msg">Fullname only contains characters and spaces.</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" class="form-control" formControlName="mobile" id="mobile" [ngClass]="{'invalid-input':singupForm.controls.mobile.invalid}"
+                      placeholder="Enter mobile">
+                    <div *ngIf="singupForm.controls['mobile'].errors && !singupForm.controls['mobile'].pristine" class="error-msg">
+                      <div [hidden]="!singupForm.controls['mobile'].errors.required" class="error-msg">Mobile is required.</div>
+                      <div [hidden]="!singupForm.controls['mobile'].errors.pattern" class="error-msg">Mobile number is invalid.</div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label>Gender</label>
+                    <br/>
+                    <label class="radio-inline">
+                      <input type="radio" value="female" name="gender" formControlName="gender"> Female
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" value="male" name="gender" formControlName="gender"> Male
+                    </label>
+                    <div *ngIf="singupForm.controls['gender'].errors && !singupForm.controls['gender'].pristine" class="error-msg">
+                      <div [hidden]="!singupForm.controls['gender'].errors.required" class="error-msg">Gender is required.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-xs-12" align="center">
+            <div class="personal-details">
+            </div>
+            <div class="form-group">
+              <label>Profile pic</label>
+              <div>
+                <img [src]="dummyProfilePic" *ngIf="!profilePic" class="dummy-pic img-circle" alt="profile pic">
+                <img *ngIf="profilePic" class="dummy-pic img-circle" [src]="'data:image/jpg;base64,'+profilePic" />
+              </div>
+              <div>
+                <input type="file" style="display: none" accept="image/*" id="ref-images" (change)="uploadImage($event)">
+                <a *ngIf="!profilePic" onclick="document.getElementById('ref-images').click()">Click here to change Profile Picture</a>
+                <a *ngIf="profilePic" (click)="deleteImage()">Delete</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Date of Birth</label>
+                  <my-date-picker name="mydate" (dateChanged)="onDateChanged($event)" [options]="myDatePickerOptions" formControlName="dob" required></my-date-picker>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <div class="signup-submit">
+              <button class="btn btn-primary" [disabled]="!singupForm.valid" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </div>

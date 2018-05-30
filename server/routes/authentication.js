@@ -7,23 +7,55 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 rand = makeid();
-
-const transporter = nodemailer.createTransport(smtpTransport({
+var transporter = nodemailer.createTransport({
     service: 'gmail',
-    host: 'smtp.gmail.com',
     auth: {
-        user: 'kiranreddy1284@gmail.com',
+        user: 'kiranreddy1284.com',
         pass: '9010898679'
     }
-}));
-router.get('/login',(req,res)=>{
-    User.find({},(err,users)=> {
+});
+// const transporter = nodemailer.createTransport(smtpTransport({
+//     service: 'gmail',
+//     host: 'smtp.gmail.com',
+//     auth: {
+//         user: 'kiranreddy1284@gmail.com',
+//         pass: '9010898679'
+//     }
+// }));
+router.get('/login', (req, res) => {
+    User.find({}, (err, users) => {
         if (err) return next(err);
-        if(users){
+        if (users) {
             res.json(users);
         }
     });
 });
+router.put('/update', (req, res, next) => {
+    req.body.data.token = rand;
+    req.body.data.verified = false;
+    User.findByIdAndUpdate({ _id: req.body.id }, req.body.data, (err, user) => {
+        if (err) return next(err);
+        if (user) {
+            host = req.get('host');
+            link = "http://" + req.get('host') + "/authentication/verify?token=" + rand + "&email=" + req.body.data.email;
+            var mailOptions = {
+                from: 'Kirans blog',
+                to: req.body.email,
+                subject: "Please confirm your Email account",
+                html: "Click to Verify : <br>" + link
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+        }
+        res.json(user);
+    });
+});
+
 router.post('/login', (req, res) => {
     var hallticket = req.body.hallticket;
     var password = req.body.password;
@@ -31,18 +63,13 @@ router.post('/login', (req, res) => {
     User.findOne({ hallticket: hallticket }, function (err, users) {
         if (err) return next(err);
         if (users) {
-            if (users.verified) {
-                var validPassword = users.comparePassword(req.body.password);
-                if (!validPassword) {
-                    res.json({ success: false, message: 'Inavalid Password.' });
-                }
-                else {
-                    var token = jwt.sign({ userId: users._id }, config.secret, { expiresIn: '24h' })
-                    res.json({ success: true, message: 'logged in successfully.', token: token, user: { username: users.hallticket,userId: users._id,fullname:users.fullname } });
-                }
+            var validPassword = users.comparePassword(req.body.password);
+            if (!validPassword) {
+                res.json({ success: false, message: 'Inavalid Password.' });
             }
             else {
-                res.json({ success: true, message: 'Please verify email to continue.' });
+                var token = jwt.sign({ userId: users._id }, config.secret, { expiresIn: '24h' })
+                res.json({ success: true, message: 'logged in successfully.', token: token, user: users });
             }
         }
         else {
@@ -56,13 +83,10 @@ router.post('/register', (req, res) => {
         // email: req.body.email.toLowerCase(),
         hallticket: req.body.hallticket,
         password: req.body.password,
-        email: req.body.email,
-        fullname: req.body.fullname,
-        verified: true,
-        token: rand
+        // verified: false,
+        // token: rand
     });
     User.findOne({ hallticket: req.body.hallticket }, function (err, users) {
-        console.log(users);
         if (err) return next(err);
         if (!users) {
             user.save((err) => {
@@ -110,34 +134,34 @@ router.get('/verify', (req, res) => {
     // console.log(req.query)
 });
 const decoded = null;
-router.use((req,res,next)=>{
-   const token =  req.headers['authorization'];
-   if(!token){
-    res.json({ success: false, message: "No token provided" });
-   }
-   else{
-       jwt.verify(token,config.secret,(err,decoded)=>{
-           if(err){
-            res.json({ success: false, message: "Token invalid" });
-           }
-           else{
-               req.decoded = decoded;
-               next();
-           }
-       });
-   }
+router.use((req, res, next) => {
+    const token = req.headers['authorization'];
+    if (!token) {
+        res.json({ success: false, message: "No token provided" });
+    }
+    else {
+        jwt.verify(token, config.secret, (err, decoded) => {
+            if (err) {
+                res.json({ success: false, message: "Token invalid" });
+            }
+            else {
+                req.decoded = decoded;
+                next();
+            }
+        });
+    }
 });
 
-router.get('/profile',(req,res) =>{
-    User.findOne({_id: req.decoded.userId}).select('username email').exec((err,usr)=>{
-        if(err){
-            res.json({success: false, message: err});
+router.get('/profile', (req, res) => {
+    User.findOne({ _id: req.decoded.userId }).select('username email').exec((err, usr) => {
+        if (err) {
+            res.json({ success: false, message: err });
         }
-        else{
-            if(!usr){
+        else {
+            if (!usr) {
                 res.json({ success: false, message: "User not found" });
             }
-            else{
+            else {
                 res.json({ success: true, user: usr });
             }
         }

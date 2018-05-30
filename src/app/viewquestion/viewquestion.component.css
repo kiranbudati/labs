@@ -55,10 +55,34 @@ a {
     word-break: break-all;
     padding: 3px;
 }
-.comment-footer{
+/* .comment-footer{
     border-bottom: 1px solid #b1a6a6;
-}
+} */
 .commentedBy {
     font-weight: bold;
     color: #210e75;
+}
+.like {
+    color: #0faa38;
+}
+.dislike {
+    color: #ce0d07;
+}
+.related-ques{
+    word-break: break-all;
+}
+.related-ques-head{
+    color: #02050d;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #d0d7e6;
+}
+.reated-ques-body {
+    padding-top:3px;
+}
+.reated-ques-body > a {
+    text-decoration: none;
+}
+.reated-ques-body>a:hover {
+    color: #3a8514;
 }

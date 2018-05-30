@@ -39,7 +39,6 @@ export class ForumComponent implements OnInit {
     this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
   viewQuestion(id) {
-    console.log(id);
     this.router.navigate(['/forum/view_question', id]);
   }
   ngOnInit() {

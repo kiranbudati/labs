@@ -5,6 +5,7 @@ import { RouterModule, Route, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { MyDatePickerModule } from 'mydatepicker';
 
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
@@ -50,7 +51,8 @@ import { ViewquestionComponent } from './viewquestion/viewquestion.component';
     ReactiveFormsModule,
     HttpClientModule,
     FroalaEditorModule.forRoot(),
-    FroalaViewModule.forRoot()
+    FroalaViewModule.forRoot(),
+    MyDatePickerModule
   ],
   exports: [
     NavbarComponent,
