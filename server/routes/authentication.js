@@ -7,21 +7,21 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 rand = makeid();
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'kiranreddy1284@gmail.com',
-        pass: '9010898679'
-    }
-});
-// const transporter = nodemailer.createTransport(smtpTransport({
+// var transporter = nodemailer.createTransport({
 //     service: 'gmail',
-//     host: 'smtp.gmail.com',
 //     auth: {
 //         user: 'kiranreddy1284@gmail.com',
 //         pass: '9010898679'
 //     }
-// }));
+// });
+const transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    host: 'smtp.gmail.com',
+    auth: {
+        user: 'kiranreddy1284@gmail.com',
+        pass: '9010898679'
+    }
+}));
 router.get('/login', (req, res) => {
     User.find({}, (err, users) => {
         if (err) return next(err);
