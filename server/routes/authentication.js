@@ -10,7 +10,7 @@ rand = makeid();
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'kiranreddy1284.com',
+        user: 'kiranreddy1284@gmail.com',
         pass: '9010898679'
     }
 });
