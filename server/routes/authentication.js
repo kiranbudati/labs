@@ -8,15 +8,24 @@ const config = require('../config/database');
 
 rand = makeid();
 let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    requireTLS: true,
+    host: 'smtp.zoho.com',
+    port: 465,
+    secure: false, // true for 465, false for other ports
     auth: {
-        user: 'kiranreddy1284@gmail.com',
-        pass: '9010898679'
+        user: 'vinushavudugu@h-bots.com', // generated ethereal user
+        pass: '9542347695' // generated ethereal password
     }
 });
+// let transporter = nodemailer.createTransport({
+//     host: 'smtp.gmail.com',
+//     port: 587,
+//     secure: false,
+//     requireTLS: true,
+//     auth: {
+//         user: 'kiranreddy1284@gmail.com',
+//         pass: '9010898679'
+//     }
+// });
 // var transporter = nodemailer.createTransport({
 //     service: 'gmail',
 //     auth: {
@@ -51,7 +60,7 @@ router.put('/update', (req, res, next) => {
             host = req.get('host');
             link = "http://" + req.get('host') + "/authentication/verify?token=" + rand + "&email=" + req.body.data.email;
             var mailOptions = {
-                from: 'kiranreddy1284@gmail.com',
+                from: 'vinushavudugu@h-bots.com',
                 to: req.body.data.email,
                 subject: "Please confirm your Email account",
                 html: "Click to Verify : <br>" + link
