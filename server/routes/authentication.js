@@ -11,15 +11,17 @@ rand = makeid();
 //     service: 'gmail',
 //     auth: {
 //         user: 'kiranreddy1284@gmail.com',
+//vinushavudugu@h-bots.com
+//9542347695
 //         pass: '9010898679'
 //     }
 // });
 const transporter = nodemailer.createTransport(smtpTransport({
-    service: 'gmail',
-    host: 'smtp.gmail.com',
+    // service: 'gmail',
+    host: 'smtp.zoho.com',
     auth: {
-        user: 'kiranreddy1284@gmail.com',
-        pass: '9010898679'
+        user: 'vinushavudugu@h-bots.com',
+        pass: '9542347695'
     }
 }));
 router.get('/login', (req, res) => {
@@ -39,8 +41,8 @@ router.put('/update', (req, res, next) => {
             host = req.get('host');
             link = "http://" + req.get('host') + "/authentication/verify?token=" + rand + "&email=" + req.body.data.email;
             var mailOptions = {
-                from: 'Kirans blog',
-                to: req.body.email,
+                from: 'vinushavudugu@h-bots.com',
+                to: req.body.data.email,
                 subject: "Please confirm your Email account",
                 html: "Click to Verify : <br>" + link
             };
