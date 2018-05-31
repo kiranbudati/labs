@@ -7,6 +7,16 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 
 rand = makeid();
+let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false,
+    requireTLS: true,
+    auth: {
+        user: 'kiranreddy1284@gmail.com',
+        pass: '9010898679'
+    }
+});
 // var transporter = nodemailer.createTransport({
 //     service: 'gmail',
 //     auth: {
@@ -16,14 +26,14 @@ rand = makeid();
 //         pass: '9010898679'
 //     }
 // });
-const transporter = nodemailer.createTransport(smtpTransport({
-    // service: 'gmail',
-    host: 'smtp.zoho.com',
-    auth: {
-        user: 'vinushavudugu@h-bots.com',
-        pass: '9542347695'
-    }
-}));
+// const transporter = nodemailer.createTransport(smtpTransport({
+//     // service: 'gmail',
+//     host: 'smtp.zoho.com',
+//     auth: {
+//         user: 'vinushavudugu@h-bots.com',
+//         pass: '9542347695'
+//     }
+// }));
 router.get('/login', (req, res) => {
     User.find({}, (err, users) => {
         if (err) return next(err);
@@ -41,18 +51,24 @@ router.put('/update', (req, res, next) => {
             host = req.get('host');
             link = "http://" + req.get('host') + "/authentication/verify?token=" + rand + "&email=" + req.body.data.email;
             var mailOptions = {
-                from: 'vinushavudugu@h-bots.com',
+                from: 'kiranreddy1284@gmail.com',
                 to: req.body.data.email,
                 subject: "Please confirm your Email account",
                 html: "Click to Verify : <br>" + link
             };
-            transporter.sendMail(mailOptions, function (error, info) {
+            transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
-                    console.log(error);
-                } else {
-                    console.log('Email sent: ' + info.response);
+                    return console.log(error.message);
                 }
+                console.log('success');
             });
+            // transporter.sendMail(mailOptions, function (error, info) {
+            //     if (error) {
+            //         console.log(error);
+            //     } else {
+            //         console.log('Email sent: ' + info.response);
+            //     }
+            // });
         }
         res.json(user);
     });
