@@ -55,4 +55,7 @@ export class AppService {
   getComponets() {
     return this.http.get(this.URL + '/components');
   }
+  getComponentById(id) {
+    return this.http.get(this.URL + '/components/' + id);
+  }
 }

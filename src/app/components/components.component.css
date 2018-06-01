@@ -1,11 +1,17 @@
 .component-container {
     border-top: 1px solid #d0d7e6;
     border-bottom: 1px solid #d0d7e6;
+    height:auto;
+    max-height:150%;
+    /* overflow-y:scroll;   
+    overflow-x: hidden; */
 }
 .right-content{
-    border-left: 1px solid #d0d7e6;
     padding-right: 0px;
     padding-left: 0px;
+}
+.comp-right-border {
+    border-right: 1px solid #d0d7e6;
 }
 .component-list {
     background-color: #102e6a;
@@ -20,6 +26,41 @@
 .list-group-item:last-child, .list-group-item:first-child{
     border-bottom-right-radius: 0px;
     border-bottom-left-radius:0px;
+}
+.comp-boxes {
+    padding: 15px;
+}
+.components {
+    margin-top: 3px;
+}
+.comp-box{
+    height: 250px;
+    width: 100%;
+    border: 1px solid #c0c5ce;
+    position: relative;
+}
+.comp-image > img{
+    height: 180px;
+    width: 100%;
+}
+.comp-body{
+    height: 70px;
+    width: 100%;
+    background-color: #c0c5ce;
+}
+.comp-title > a {
+    cursor: pointer;
+    color: #191970;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 3px;
+}
+.comp-family{
+    padding: 3px;
+}
+.comp-rating> span{
+    padding: 2px;
+    font-size: 14px;
 }
 .component-list-item{
     color: #000;

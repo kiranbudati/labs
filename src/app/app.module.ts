@@ -30,6 +30,7 @@ import { UniquePipe } from './pipes/unique.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { ViewquestionComponent } from './viewquestion/viewquestion.component';
 import { AddcomponentComponent } from './addcomponent/addcomponent.component';
+import { ViewComponentComponent } from './view-component/view-component.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { AddcomponentComponent } from './addcomponent/addcomponent.component';
     SearchPipe,
     ViewquestionComponent,
     AddcomponentComponent,
+    ViewComponentComponent,
   ],
   imports: [
     BrowserModule,

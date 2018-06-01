@@ -1,7 +1,37 @@
 <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Components</h2>
+    </div>
+  </div>
   <div class="row component-container">
-    <div class="col-md-9">
-      dasdsajgd
+    <div class="col-md-9 comp-right-border">
+      <div class="comp-boxes">
+        <div class="row">
+          <div class="col-md-3 components"  *ngFor="let component of components;let i =index">
+            <div class="comp-box">
+              <div class="comp-image">
+                <img [src]="'data:image/jpg;base64,'+component.componentImages[0]" />
+              </div>
+              <div class="comp-body">
+                <div class="comp-title">
+                  <a (click)="viewComponent(component._id)">{{component.componentTitle}}</a>
+                </div>
+                <div class="comp-family">
+                  Development Board
+                </div>
+                <div class="comp-rating">
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-3 right-content">
       <div class="component-list">

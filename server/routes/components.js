@@ -11,7 +11,14 @@ router.get('/', (req, res, next) => {
         }
     });
 });
-
+router.get('/:id', (req, res, next) => {
+    Components.find({_id: req.params.id}, (err, component) => {
+        if (err) return next(err);
+        if(component){
+            res.json(component);
+        }
+    });
+});
 router.post('/',(req,res,next)=>{
     Components.create(req.body,(err,component)=>{
         if (err) return next(err);

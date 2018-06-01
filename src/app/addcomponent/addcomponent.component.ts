@@ -53,7 +53,6 @@ export class AddcomponentComponent implements OnInit {
     });
     this.appService.addComponent(this.addComponentForm.value).subscribe((res) => {
       this.addCompRes = res;
-      console.log(res);
       if (this.addCompRes.message === true) {
         this.addComponentForm.reset();
         this.resetFields();

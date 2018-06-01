@@ -12,6 +12,14 @@ const componentSchema = new Schema({
         type: String,
         default: null
     },
+    family:{
+        type: String,
+        default: null
+    },
+    rating:[{
+        type: Number,
+        default: null
+    }],
     advantages: [{
         type: String,
         default: null
