@@ -1,0 +1,140 @@
+import { Component, OnInit } from '@angular/core';
+import { TagModel } from 'ngx-chips/core/accessor';
+import { Observable } from 'rxjs';
+import { TagInputModule } from 'ngx-chips';
+@Component({
+  selector: 'app-addcomponent',
+  templateUrl: './addcomponent.component.html',
+  styleUrls: ['./addcomponent.component.css']
+})
+export class AddcomponentComponent implements OnInit {
+
+  // items = ['Pizza', 'Pasta', 'Parmesan'];
+
+  advantages: any = []; disadvantages: any = []; features: any = []; applications: any = [];
+  advan: any; disadvan: any; featu: any; applic: any;
+  adClick: Boolean; disAdClick: Boolean; featClick; appClick: Boolean;
+  mode: any;
+  constructor() {
+    this.mode = 0;
+    this.adClick = false; this.disAdClick = false; this.featClick = false; this.appClick = false;
+    // this.advantages = []; this.disadvantages = []; this.features = []; this.applications = [];
+    // this.advan = null; this.disadvan = null; this.featu = null; this.applic = null;
+  }
+
+  // advantages
+  addAdvatages() {
+    this.adClick = true;
+  }
+  saveAdvantages() {
+    this.adClick = false;
+    this.advantages.push(this.advan);
+    this.advan = null;
+  }
+  cancelAdvantages() {
+    this.advan = null;
+  }
+  deleteAdvantages(ind) {
+    this.advantages.splice(ind, 1);
+  }
+  // disadvantages
+  addDisAdvantages() {
+    this.disAdClick = true;
+  }
+  saveDisAdvantages() {
+    this.disAdClick = false;
+    this.disadvantages.push(this.advan);
+    this.disadvan = null;
+  }
+  cancelDisAdvantages() {
+    this.disadvan = null;
+
+  }
+  deleteDisAdvantages(ind) {
+    this.disadvantages.splice(ind, 1);
+
+  }
+  // features
+  // applications
+  // others
+  add(data: Number) {
+    this.mode = data;
+    if (data === 1) {
+      this.adClick = true;
+    } else if (data === 2) {
+      this.disAdClick = true;
+    } else if (data === 3) {
+      this.featClick = true;
+    } else {
+      this.appClick = true;
+    }
+  }
+  cancel(data: Number) {
+    this.mode = 0;
+    if (data === 1) {
+      this.advan = null;
+    } else if (data === 2) {
+      this.disadvan = null;
+    } else if (data === 3) {
+      this.featu = null;
+    } else {
+      this.applic = null;
+    }
+  }
+  delete(mod, ind) {
+    if (mod === 1) {
+      this.advantages.splice(ind, 1);
+    } else if (mod === 2) {
+      this.disadvantages.splice(ind, 1);
+    } else if (mod === 3) {
+      this.features.splice(ind, 1);
+    } else {
+      this.applications.splice(ind, 1);
+    }
+  }
+  // edit(mod, ind) {
+
+  //   if (mod === 1) {
+  //     this.advan = this.advantages[ind];
+  //     this.mode = mod;
+  //   } else if (mod === 2) {
+
+  //   } else if (mod === 3) {
+
+  //   } else {
+
+  //   }
+  // }
+  save(data: Number) {
+    if (data === 1) {
+
+      this.adClick = false;
+      this.advantages.push(this.advan);
+      this.advan = null;
+      this.mode = 0;
+
+    } else if (data === 2) {
+
+      this.disAdClick = false;
+      this.disadvantages.push(this.disadvan);
+      this.disadvan = null;
+      this.mode = 0;
+
+    } else if (data === 3) {
+
+      this.featClick = false;
+      this.features.push(this.featu);
+      this.featu = null;
+      this.mode = 0;
+
+    } else {
+      this.appClick = false;
+      this.applications.push(this.applic);
+      this.applic = null;
+      this.mode = 0;
+    }
+  }
+  ngOnInit() {
+  }
+
+}

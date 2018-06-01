@@ -53,7 +53,7 @@ router.get('/login', (req, res) => {
 });
 router.put('/update', (req, res, next) => {
     req.body.data.token = rand;
-    req.body.data.verified = false;
+    req.body.data.verified = true;
     User.findByIdAndUpdate({ _id: req.body.id }, req.body.data, (err, user) => {
         if (err) return next(err);
         if (user) {
@@ -67,7 +67,8 @@ router.put('/update', (req, res, next) => {
             };
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
-                    return console.log(error.message);
+                    console.log(error.message);
+                    return error.message
                 }
                 console.log('success');
             });

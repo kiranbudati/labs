@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { MyDatePickerModule } from 'mydatepicker';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { ForumComponent } from './forum/forum.component';
@@ -27,6 +29,7 @@ import { AskquestionComponent } from './askquestion/askquestion.component';
 import { UniquePipe } from './pipes/unique.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { ViewquestionComponent } from './viewquestion/viewquestion.component';
+import { AddcomponentComponent } from './addcomponent/addcomponent.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { ViewquestionComponent } from './viewquestion/viewquestion.component';
     UniquePipe,
     SearchPipe,
     ViewquestionComponent,
+    AddcomponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,10 @@ import { ViewquestionComponent } from './viewquestion/viewquestion.component';
     HttpClientModule,
     FroalaEditorModule.forRoot(),
     FroalaViewModule.forRoot(),
-    MyDatePickerModule
+    MyDatePickerModule,
+    TagInputModule,
+    BrowserAnimationsModule,
+    FormsModule,
   ],
   exports: [
     NavbarComponent,

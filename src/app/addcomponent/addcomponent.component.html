@@ -1,0 +1,220 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-primary">
+        <div class="panel-heading">Add Component</div>
+        <div class="panel-body">
+          <form [formGroup]="addComponentForm" (submit)="addComponent()">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="form-group">
+                  <label for="title">Component Title</label>
+                  <input type="text" formControlName="componentTitle" class="form-control" id="title" placeholder="Component Title">
+                </div>
+                <div class="form-group">
+                  <label for="description">Description</label>
+                  <textarea class="form-control" formControlName="componentDescription" id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Component Images</label>
+                  <small>You can select Upto 6 images</small>
+                  <div class="row">
+                    <div class="col-md-12" (click)="componentImg.click()" *ngIf="!componentImages.length">
+                      <div class="comp-images">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div *ngIf="componentImages.length>0">
+                      <div class="col-md-4" *ngFor="let cnImg of componentImages;let i = index">
+                        <img class="cmp-img" [src]="'data:image/jpg;base64,'+cnImg" />
+                        <div class="img-bottom">
+                          <div class="img-delete" (click)="deleteCompImage(i)">Delete</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comp-img-click">
+                    <input type="file" accept="image/*" style="display: none" (change)="componetImages($event)" #componentImg>
+                    <br/>
+                    <a class="click-upload" (click)="componentImg.click()" *ngIf="componentImages.length < 6">Upload component Images</a>
+                  </div>
+                  <!-- <button class="btn btn-primary" (click)="componentImg.click()"></button> -->
+                </div>
+                <div class="form-group">
+                  <label>Other Images</label>
+                  <small>You can select Upto 6 images</small>
+                  <div class="row">
+                    <div class="col-md-12" (click)="otherImg.click()" *ngIf="!otherImages.length">
+                      <div class="comp-images">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                    <div *ngIf="otherImages.length>0">
+                      <div class="col-md-4" *ngFor="let otImg of otherImages;let i = index">
+                        <img class="cmp-img" [src]="'data:image/jpg;base64,'+otImg" />
+                        <div class="img-bottom">
+                          <div class="img-delete" (click)="deleteOtherImage(i)">Delete</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comp-img-click">
+                    <input type="file" accept="image/*" style="display: none" (change)="otherImagesUpload($event)" #otherImg>
+                    <br/>
+                    <a class="click-upload" (click)="otherImg.click()" *ngIf="otherImages.length < 6">Upload Other Images</a>
+                  </div>
+                  <!-- <button class="btn btn-primary" (click)="componentImg.click()"></button> -->
+                </div>
+                <!-- <div class="form-group">
+                <label for="title1">Component Title</label>
+                <tag-input [(ngModel)]='items'></tag-input>              
+              </div> -->
+              </div>
+              <div class="col-md-1">
+              </div>
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Advantages</div>
+                      <div class="panel-body">
+                        <div *ngIf="advantages.length">
+                          <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let adv of advantages;let i = index">
+                              {{adv}}
+                              <span class="pull-right">
+                                <i class="fa fa-times ic-close" (click)="deleteAdvantages(i)" aria-hidden="true"></i>
+                                <!-- <i class="fa fa-pencil ic-save" (click)="edit(1,i)" aria-hidden="true"></i> -->
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="form-group" *ngIf="adClick">
+                          <input class="form-control" [(ngModel)]="advan" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <a class="pull-right" (click)="cancelAdvantages()" *ngIf="adClick">cancel</a>
+                        <a class="pull-right" (click)="saveAdvantages()" *ngIf="adClick">save</a>
+                        <a class="pull-right" (click)="addAdvatages()" *ngIf="!adClick">Click Here to add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Dis-Advantages</div>
+                      <div class="panel-body">
+                        <div *ngIf="disadvantages.length">
+                          <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let disadv of disadvantages;let i = index">
+                              {{disadv}}
+                              <span class="pull-right">
+                                <i class="fa fa-times ic-close" (click)="deleteDisAdvantages(i)" aria-hidden="true"></i>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="form-group" *ngIf="disAdClick">
+                          <input class="form-control" [(ngModel)]="disadvan" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <a class="pull-right" (click)="cancelDisAdvantages()" *ngIf="disAdClick">cancel</a>
+                        <a class="pull-right" (click)="saveDisAdvantages()" *ngIf="disAdClick">save</a>
+                        <a class="pull-right" (click)="addDisAdvantages()" *ngIf="!disAdClick">Click Here to add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Features</div>
+                      <div class="panel-body">
+                        <div *ngIf="features.length">
+                          <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let fea of features;let i = index">
+                              {{fea}}
+                              <span class="pull-right">
+                                <i class="fa fa-times ic-close" (click)="deleteFeatures(i)" aria-hidden="true"></i>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="form-group" *ngIf="featClick">
+                          <input class="form-control" [(ngModel)]="featu" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <a class="pull-right" (click)="cancelFeatures()" *ngIf="featClick">cancel</a>
+                        <a class="pull-right" (click)="saveFeatures()" *ngIf="featClick">save</a>
+                        <a class="pull-right" (click)="addFeatures()" *ngIf="!featClick">Click Here to add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Applications</div>
+                      <div class="panel-body">
+                        <div *ngIf="applications.length">
+                          <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let app of applications;let i = index">
+                              {{app}}
+                              <span class="pull-right">
+                                <i class="fa fa-times ic-close" (click)="deleteApplications(i)" aria-hidden="true"></i>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="form-group" *ngIf="appClick">
+                          <input class="form-control" [(ngModel)]="applic" [ngModelOptions]="{standalone: true}">
+                        </div>
+                        <a class="pull-right" (click)="cancelApplications()" *ngIf="appClick">cancel</a>
+                        <a class="pull-right" (click)="saveApplications()" *ngIf="appClick">save</a>
+                        <a class="pull-right" (click)="addApplications()" *ngIf="!appClick">Click Here to add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">Others</div>
+                      <div class="panel-body">
+                        <div *ngIf="others.length">
+                          <ul class="list-group">
+                            <li class="list-group-item" *ngFor="let other of others;let i = index">
+                              {{other.heading}}
+                              <span class="pull-right">
+                                <i class="fa fa-times ic-close" (click)="deleteOthers(i)" aria-hidden="true"></i>
+                              </span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div *ngIf="otherClick">
+                          <div class="form-group">
+                            <label for="otherHeading">Component Title</label>
+                            <input class="form-control" [(ngModel)]="otherHead" id="otherHeading" [ngModelOptions]="{standalone: true}">
+                          </div>
+                          <div class="form-group">
+                            <label for="otherdec">Component Title</label>
+                            <textarea class="form-control" [(ngModel)]="otherDesc" id="otherdec" [ngModelOptions]="{standalone: true}" rows="3"></textarea>
+                          </div>
+                        </div>
+                        <a class="pull-right" (click)="cancelOthers()" *ngIf="otherClick">cancel</a>
+                        <a class="pull-right" (click)="saveOthers()" *ngIf="otherClick">save</a>
+                        <a class="pull-right" (click)="addOthers()" *ngIf="!otherClick">Click Here to add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr/>
+            <div class="add-comp-footer">
+              <button class="btn btn-success" [disabled]="!addComponentForm.valid" type="submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

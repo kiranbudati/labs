@@ -34,8 +34,10 @@ export class LoginComponent implements OnInit {
     });
     this.singupForm = this.fb.group({
       hallticket: new FormControl(''),
-      fullname: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(25), Validators.pattern('^[a-zA-Z\s \-\']+')]),
-      email: new FormControl('', [Validators.required, patternValidator(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
+      fullname: new FormControl('', [Validators.required, Validators.minLength(4),
+      Validators.maxLength(25), Validators.pattern('^[a-zA-Z\s \-\']+')]),
+      email: new FormControl('', [Validators.required,
+      patternValidator(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       gender: new FormControl('', [Validators.required]),
       mobile: new FormControl('', [Validators.required, Validators.pattern(regexValidators.phone)]),
       profilePic: new FormControl(''),
@@ -96,7 +98,6 @@ export class LoginComponent implements OnInit {
     this.profilePic = null;
     const files = evt.target.files;
     const file = files[0];
-
     if (files && file) {
       const reader = new FileReader();
       reader.onload = this._handleReaderLoaded.bind(this);
