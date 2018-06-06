@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
     this.authService.logout();
   }
   ngOnInit() {
+    console.log(this.authService.whoLogggedIn());
   }
 
 }

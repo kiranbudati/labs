@@ -1,3 +1,538 @@
-<p>
-  profile works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Profile</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="left-content">
+        <div class="profile-tab">
+          <div class="pro-img">
+            <img src="../../assets/my.jpg" class="profile-pic">
+          </div>
+          <div class="name">
+            <h3>Kisshhan PSV</h3>
+            <div class="form-text text-muted">kisshhan@h-bots.com</div>
+            <div class="form-text text-muted">9999999999</div>
+          </div>
+          <div class="list-group">
+            <a (click)="showTab(1)" class="list-group-item" [ngClass]="{'active':profileActive}">Profile</a>
+            <a (click)="showTab(2)" class="list-group-item" [ngClass]="{'active':questionsActive}">Questions</a>
+            <!-- <a (click)="showTab(3)" class="list-group-item" [ngClass]="{'active':likeOrCommentActive}">Likes / Comments</a> -->
+            <a (click)="showTab(4)" class="list-group-item" [ngClass]="{'active':projectsActive}">Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="right-content">
+        <div class="profile-details" *ngIf="profileActive">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Profile</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="personal-heading">
+                    Personal Details
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="name">Fullname:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Kisshhan PSV</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="email">Email:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">kisshhan@h-bots.com</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="mobile">Mobile:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">9999999999</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="gender">Gender:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Male</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="email">Date of Birth:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">1/1/1985</p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" *ngIf="userType === 'maker'">
+                  <div class="personal-heading">
+                    Education Details
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="name">Fullname:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Kisshhan PSV</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="college">College :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">BITS, Hyderabad</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="branch">Branch :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Mech</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="sem">Semister :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">4-2</p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" *ngIf="userType === 'maker'">
+                  <div class="personal-heading">
+                    Education Details
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="college">College :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">BITS, Hyderabad</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="branch">Branch :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Mech</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="sem">Semister :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">4-2</p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6" *ngIf="userType === 'mentor'">
+                  <div class="personal-heading">
+                    Professional Details
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-4" for="domain">Domain :</label>
+                            <div class="col-sm-8">
+                              <p class="form-control-static">Artificial Intellegence</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-4" for="subdomain">Sub Domain :</label>
+                            <div class="col-sm-8">
+                              <p class="form-control-static">Machine Learning</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-4" for="sem">Experince :</label>
+                            <div class="col-sm-8">
+                              <p class="form-control-static">5 Years</p>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-details" *ngIf="questionsActive">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Questions</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="personal-heading">
+                    Previously Asked
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="question">
+                    <div class="question-title">
+                      How do I get the path to the current script with Node.js?
+                    </div>
+                    <div class="asked-date text-muted">4/5/2018 1:00 PM</div>
+                    <div class="hr-line"></div>
+                    <div class="question-description">
+                      How would I get the path to the script in Node.js? I know there's process.cwd, but that only refers to the directory where
+                      the script was called, not of the script itself. For instance, say I'm in /home/kyle/ and I run the
+                      following command: node /home/kyle/some/dir/file.js If I call process.cwd(), I get /home/kyle/, not
+                      /home/kyle/some/dir/. Is there a way to get that directory?
+                    </div>
+                    <div class="question-footer">
+                      <div class="rec-likes">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> (0)
+                      </div>
+                      <div class="rec-dislikes">
+                        <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> (0)
+                      </div>
+                      <div class="rec-commentts">
+                        <i class="fa fa-comments-o" aria-hidden="true"></i> (0)
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-details" *ngIf="projectsActive">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Projects</div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="personal-heading">
+                    <div class="row">
+                      <div class="col-md-6">On Going Projects</div>
+                      <div class="col-md-6 add-project-button" *ngIf="userType === 'maker'">
+                        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#addProject">
+                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Project
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="title">Title:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Waste Management System</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="desc">Description :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Waste management or waste disposal are all the activities and actions required to manage waste
+                                from its inception to its final disposal. This includes amongst other things collection,
+                                transport, treatment and disposal of waste together with monitoring and regulation. It also
+                                encompasses the legal and regulatory framework that relates to waste management encompassing
+                                guidance on recycling.</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="domain">Domain:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">Artificial Intelligence</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="sub-domain">Sub Domain:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">Machine Learning</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="mentor">Mentor:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">H - Bots</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="rating">Rating:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">25 Votes (4.2)</p>
+                                  <!-- <div class="rating">
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span>(4.5)</span>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="startdate">Start Date:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">
+                                    <span class="badge badge-pill badge-success">1/5/2018</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="enddate">Exp End Date:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">
+                                    <span class="badge badge-pill badge-danger">15/6/2018</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="components">Components:</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-static">
+                                    <a>Lcd Module</a>,
+                                    <a>Ardunio mega</a>,
+                                    <a>Raspberry pi</a>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br/>
+                <hr>
+                <div class="col-md-12">
+                  <div class="personal-heading">
+                    <div class="row">
+                      <div class="col-md-6">Completed Projects</div>
+                    </div>
+                  </div>
+                  <div class="personal-data">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="title">Title:</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Water resource management</p>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label class="control-label col-sm-3" for="desc">Description :</label>
+                            <div class="col-sm-9">
+                              <p class="form-control-static">Water resource management is the activity of planning, developing, distributing and managing
+                                the optimum use of water resources. It is a sub-set of water cycle management. Ideally, water
+                                resource management planning has regard to all the competing demands for water and seeks
+                                to allocate water on an equitable basis to satisfy all uses and demands. As with other resource
+                                management, this is rarely possible in practice.</p>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="domain">Domain:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">Artificial Intelligence</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="sub-domain">Sub Domain:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">Machine Learning</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="mentor">Mentor:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">H - Bots</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="rating">Rating:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">18 Votes (4.1)</p>
+                                  <!-- <div class="rating">
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star checked-rate"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span>(3.0)</span>
+                                  </div> -->
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="startdate">Start Date:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">
+                                    <span class="badge badge-pill badge-success">1/3/2018</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="control-label col-sm-6" for="enddate">Exp End Date:</label>
+                                <div class="col-sm-6">
+                                  <p class="form-control-static">
+                                    <span class="badge badge-pill badge-danger">1/5/2018</span>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="form-group">
+                                <label class="control-label col-sm-2" for="components">Components:</label>
+                                <div class="col-sm-10">
+                                  <p class="form-control-static">
+                                    <a>Lcd Module</a>,
+                                    <a>Ardunio mega</a>,
+                                    <a>Raspberry pi</a>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" data-backdrop="static" data-keyboard="false" id="addProject" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Project</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="projectTitle">Project Title</label>
+            <input type="text" class="form-control" id="projectTitle" placeholder="Project Title">
+          </div>
+          <div class="form-group">
+            <label for="projectDescription">Example textarea</label>
+            <textarea class="form-control" id="projectDescription" rows="3" placeholder="Project Description"></textarea>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class=col-md-6>
+                <div class="form-group">
+                  <label for="start-date">Start Date</label>
+                  <my-date-picker name="mydate" [options]="dateOptions" required></my-date-picker>
+                </div>
+              </div>
+              <div class=col-md-6>
+                <div class="form-group">
+                  <label for="start-date">Exp End Date</label>
+                  <my-date-picker name="mydate" [options]="dateOptions" required></my-date-picker>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="domain">Domain</label>
+                <select class="form-control" id="domain">
+                  <option>Robotics</option>
+                  <option>Iot</option>
+                  <option>Software</option>
+                  <option>AI</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="sub-domain">Sub Domain</label>
+                <select class="form-control" id="sub-domain">
+                  <option>Health Care</option>
+                  <option>Machine Learning</option>
+                  <option>Data Science</option>
+                  <option>Web</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

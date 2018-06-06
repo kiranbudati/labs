@@ -25,6 +25,9 @@ a {
 .panel-body{
     padding: 5%;
 }
+.mission > img {
+    width: 100%;
+}
 /* media queries */
 /* @media (min-width: 360px) and (max-width: 650px) {
     .logo{

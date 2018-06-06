@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.use("/authentication", require("./authentication"));
+router.use("/mentor/authentication", require("./mentor"));
 router.use("/questions", require("./question"))
 router.use("/comments", require("./comments"))
 router.use("/domains", require("./domains"))

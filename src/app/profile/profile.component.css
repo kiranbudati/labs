@@ -1,0 +1,120 @@
+a {
+    cursor: pointer;
+}
+.left-content {
+    padding: 3px;
+}
+.right-content{
+    padding: 3px;
+}
+.badge-success {
+    background-color: #5cb85c;
+}
+.badge-danger {
+    background-color: #d9534f;
+}
+.profile-tab {
+    border-radius: 5px;
+    border: 1px solid #d0d7e6;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.profile-pic {
+    width: 100%;
+}
+.name{
+    padding: 3px;
+    padding-left: 3%;
+    border-bottom: 1px solid #d0d7e6;
+    margin-bottom: 5px;
+}
+.form-horizontal .control-label {
+    text-align: unset;
+}
+.list-group {
+    margin-bottom: 0px;
+}
+.list-group-item:first-child {
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+}
+.list-group-item {
+    border: 0;
+    /* border-bottom: 1px solid #ddd; */
+}
+.panel {
+    border-color: transparent;
+}
+.panel-primary {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .05);
+}
+.panel-primary > .panel-heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+.personal-heading {
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    color: #102e6a;
+}
+.personal-data {
+    border-bottom: 1px solid #ddd;
+}
+.profile-body {
+    background: #fff;
+    padding: 10px;
+    font-size: 12px;
+}
+.add-project-button {
+    padding: 3px;
+}
+.checked-rate {
+    color: orange;
+}
+.rating > span {
+    padding-right: 2px;
+}
+.question {
+    padding: 3px;
+}
+.question-title{
+    font-size: 14px;
+    font-weight: bold;
+    color: #081735;
+}
+.question-footer{
+    margin:0;
+    padding-top: 3px;
+}
+.rec-likes{
+    float:left;
+    width:10%;
+    color: #1e57c8;
+    overflow:hidden;
+}
+.rec-dislikes{
+    float:left;
+    width:10%;
+    color: #fb2e01;
+    overflow:hidden;
+}
+.rec-comments{
+    float:left;
+    width:10%;
+    overflow:hidden;
+}
+.hr-line {
+    border-bottom: 1px solid #ddd;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #FF8C00;
+    border-color: #FF8C00;
+}
+.panel-primary > .panel-heading {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    /* background-color: #FF8C00;
+    border-color: #FF8C00; */
+}
+/* active/primary color #FF8C00 */

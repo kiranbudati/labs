@@ -14,6 +14,9 @@ import { AskquestionComponent } from './askquestion/askquestion.component';
 import { ViewquestionComponent } from './viewquestion/viewquestion.component';
 import { AddcomponentComponent } from './addcomponent/addcomponent.component';
 import { ViewComponentComponent } from './view-component/view-component.component';
+
+import { MentorLoginComponent } from './mentor-login/mentor-login.component';
+
 import { AuthGuard } from './services/auth-guard.service';
 import { NotAuthGuard } from './services/notauth.guard';
 
@@ -29,6 +32,7 @@ export const appRouters: Routes = [
   { path: 'components', component: ComponentsComponent, canActivate: [AuthGuard] },
   { path: 'components/:id', component: ViewComponentComponent, canActivate: [AuthGuard] },
   { path: 'components/add_components', component: AddcomponentComponent, canActivate: [AuthGuard] },
+  { path: 'mentor', component: MentorLoginComponent, canActivate: [NotAuthGuard] },
   { path: '**', redirectTo: '/dashboard' }
   // {path: '**', component: DashboardComponent, canActivate: [AuthGuard]}
 ];

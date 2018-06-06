@@ -1,14 +1,135 @@
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Components</li>
+      </ol>
+    </div>
+  </div>
+</div> -->
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h2>Components</h2>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Components</li>
+      </ol>
     </div>
   </div>
   <div class="row component-container">
-    <div class="col-md-9 comp-right-border">
+    <div class="col-md-6">
+    </div>
+    <div class="col-md-12" >
       <div class="comp-boxes">
         <div class="row">
-          <div class="col-md-3 components"  *ngFor="let component of components;let i =index">
+          <div class="col-md-3">
+            <div class="card" (click)="viewComponent(1)">
+              <img src="../../assets/arduinoMega/arduinomega-main.png" alt="Avatar" style="width:100%">
+              <div class="component-body">
+                <h4>
+                  <a>Arduino Mega</a>
+                </h4>
+                <p>Development Board</p>
+                <div class="rating">
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(4.5)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card" (click)="viewComponent(2)">
+              <img src="../../assets/lcdDisplay/lcd-main.jpg" alt="Avatar" style="width:100%">
+              <div class="component-body">
+                <h4>
+                  <a>LCD Display</a>
+                </h4>
+                <p>Display Module</p>
+                <div class="rating">
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(3)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card" (click)="viewComponent(3)">
+              <img src="../../assets/RaspberryPi/Raspberry_Pi_3-main.png" alt="Avatar" style="width:100%">
+              <div class="component-body">
+                <h4>
+                  <a>Raspberry Pi</a>
+                </h4>
+                <p>Development Board</p>
+                <div class="rating">
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(4.5)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card" (click)="viewComponent(4)">
+              <img src="../../assets/Motor_Driver/motordriver-main.jpg" alt="Avatar" style="width:100%">
+              <div class="component-body">
+                <h4>
+                  <a>Motor Driver</a>
+                </h4>
+                <p>Motors</p>
+                <div class="rating">
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star"></span>
+                  <span>(4.5)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card" (click)="viewComponent(5)">
+              <img src="../../assets/noirPiCamera/noir-main.jpg" alt="Avatar" style="width:100%">
+              <div class="component-body">
+                <h4>
+                  <a>noirPiCamera</a>
+                </h4>
+                <p>Camera Module</p>
+                <div class="rating">
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span class="fa fa-star checked-rate"></span>
+                  <span>(5)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- <div class="col-md-9 comp-right-border">
+      <div class="comp-boxes">
+        <div class="row">
+          <div class="col-md-3 components" *ngFor="let component of components;let i =index">
             <div class="comp-box">
               <div class="comp-image">
                 <img [src]="'data:image/jpg;base64,'+component.componentImages[0]" />
@@ -21,11 +142,11 @@
                   Development Board
                 </div>
                 <div class="comp-rating">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
+                  <span class="fa fa-star"></span>
                 </div>
               </div>
             </div>
@@ -46,6 +167,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

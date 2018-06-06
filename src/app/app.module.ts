@@ -31,6 +31,8 @@ import { SearchPipe } from './pipes/search.pipe';
 import { ViewquestionComponent } from './viewquestion/viewquestion.component';
 import { AddcomponentComponent } from './addcomponent/addcomponent.component';
 import { ViewComponentComponent } from './view-component/view-component.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { MentorLoginComponent } from './mentor-login/mentor-login.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { ViewComponentComponent } from './view-component/view-component.componen
     ViewquestionComponent,
     AddcomponentComponent,
     ViewComponentComponent,
+    TasksComponent,
+    MentorLoginComponent,
   ],
   imports: [
     BrowserModule,

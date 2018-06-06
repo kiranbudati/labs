@@ -9,15 +9,26 @@ import { AppService } from '../services/app.service';
 })
 export class ViewComponentComponent implements OnInit {
 
-  componentId: any;
+  componentId: any; loadingBar: Boolean;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private appService: AppService) { }
-
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private appService: AppService) {
+    this.loadingBar = false;
+   }
+  backToComp() {
+    this.router.navigate(['/components']);
+  }
   ngOnInit() {
+    this.loadingBar = true;
     this.componentId = this.activatedRoute.snapshot.paramMap.get('id');
-    this.appService.getComponentById(this.componentId).subscribe((res)=>{
-      console.log(res);
-    });
+    this.loadingBar = false;
+    // if (this.componentId != 1 || this.componentId != 2 || this.componentId != 3 || this.componentId != 4 || this.componentId != 5) {
+    //   console.log(this.componentId)
+    //   this.componentId = null;
+    // }
+    // console.log(this.componentId);
+    // this.appService.getComponentById(this.componentId).subscribe((res)=>{
+    //   console.log(res);
+    // });
   }
 
 }

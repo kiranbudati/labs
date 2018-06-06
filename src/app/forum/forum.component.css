@@ -29,7 +29,18 @@ a{
 .right-tab{
     padding-left: 10px;
 }
-.panel-default{
+.panel-primary > .panel-heading {
+    background-color: #143A85; 
+}
+.panel-primary {
+    border-color: #143A85;
+    border: 0;
+}
+.panel {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .05);
+    border-radius: 0;
+} 
+/* .panel-default{
     border-color: transparent;
 }
 .panel-default > .panel-heading {
@@ -41,7 +52,7 @@ a{
 .panel-body{
     word-wrap: break-word;
     float:left;
-}
+} */
 .popular-footer{
     padding-left: 2px;
 }
@@ -89,6 +100,11 @@ a{
 .recent-questions{
     margin-top: 10px;
     border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 3px;
+}
+.rec-ques {
+    padding: 8px;
 }
 .question{
     font-size: 16px;

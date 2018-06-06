@@ -1,0 +1,110 @@
+.panel-primary > .panel-heading {
+    background-color: #143A85; 
+}
+.panel-primary {
+    border-color: #143A85;
+    border: 0;
+}
+.panel {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .05);
+    border-radius: 0;
+} 
+.bottom-line {
+    border-bottom: 1px dashed #cdc8b1;
+    padding: 5px;
+}
+.news_articles {
+    height: 260px;
+}
+.news_articles_heading {
+    color: #4e606e;
+    font-size: 18px;
+    font-weight: bold;
+}
+.news-box {
+    position: relative;
+    border: 1px solid #f5f2e3;
+    border-radius: 5px;
+    height: 230px;
+    background: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+.news-box:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+.news-box-image > img {
+    width: 100%;
+    max-height: 125px;
+    height: 125px;
+    padding: 5px;
+}
+.news-box-body {
+    padding-top: 5px;
+    padding: 5px;
+}
+/* 143A85 */
+.news-source {
+    position: absolute;
+    text-align: center;
+    background-color: #FF0056;
+    color: #fff;
+    width: 100%;
+    bottom: 10px;
+}
+.tutorials {
+    height: 260px;
+}
+.tutorials-box {
+    position: relative;
+    border: 1px solid #f5f2e3;
+    border-radius: 5px;
+    height: 230px;
+    background: white;
+}
+.tutorials-box-image > img {
+    width: 100%;
+    height: 125px;
+    max-height: 125px;
+    padding: 5px;
+}
+.tutorials-box-body {
+    padding-top: 5px;
+    padding: 5px;
+}
+.tutorials-box:hover {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    cursor: pointer;
+}
+/* FF0056 */
+.tutorials-source {
+    position: absolute;
+    text-align: center;
+    background-color: #0099E7;
+    color: #fff;
+    width: 100%;
+    bottom: 10px;
+}
+/* .panel-body {
+    background-color: #e7ebf2;
+} */
+.left-content {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #cdc8b1;
+}
+.carousel-inner {
+    max-height: 400px;;
+}
+a:hover {
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 3px;   
+    color: #273746;
+}
+li > a {
+    margin-bottom: 3px;
+}

@@ -18,6 +18,9 @@ export class AuthService {
   login(data) {
     return this.http.post(this.URL + '/authentication/login', data);
   }
+  mentorLogin(data) {
+    return this.http.post(this.URL + '/mentor/authentication/login', data);
+  }
   register(data) {
     this.http.post(this.URL + '/authentication/register', data).subscribe((res) => {
       console.log(res);
@@ -37,10 +40,22 @@ export class AuthService {
     const token = localStorage.getItem('token');
     this.authToken = token;
   }
-  storeUserData(token, user) {
-    localStorage.setItem('token', token);
-    localStorage.setItem('user', user.userId);
-    localStorage.setItem('fullname', user.fullname);
+  storeUserData(token, user, type) {
+    if (type === 'maker') {
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', user.id);
+      localStorage.setItem('userType', 'maker');
+      localStorage.setItem('fullname', user.fullname);
+    } else {
+      localStorage.setItem('token', token);
+      localStorage.setItem('user', user.id);
+      localStorage.setItem('userType', 'mentor');
+      localStorage.setItem('username', user.username);
+    }
+    // localStorage.setItem('token', token);
+    // localStorage.setItem('user', user.userId);
+    // localStorage.setItem('userType', 'maker');
+    // localStorage.setItem('fullname', user.fullname);
   }
 
   loggedIn() {
@@ -50,10 +65,26 @@ export class AuthService {
       return false;
     }
   }
+  whoLogggedIn() {
+    return localStorage.getItem('userType');
+    // if (this.loggedIn() === true) {
+    //   if (localStorage.getItem('userType') === 'maker') {
+    //     return 'maker';
+    //   } else {
+    //     return 'mentor';
+    //   }
+    // }
+  }
   logout() {
-    localStorage.clear();
-    this.authToken = null;
-    this.router.navigate(['/']);
+    if (this.whoLogggedIn() === 'maker') {
+      localStorage.clear();
+      this.authToken = null;
+      this.router.navigate(['/']);
+    } else {
+      localStorage.clear();
+      this.authToken = null;
+      this.router.navigate(['/mentor']);
+    }
   }
 
 }

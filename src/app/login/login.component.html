@@ -10,7 +10,9 @@
         <hr/>
         <div class="row">
           <div class="col-md-6 col-sm-6 col-xs-12 left-content">
-
+            <div class="mission">
+              <img src="../../assets/mission.png" />
+            </div>
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12 left-border">
             <div class="row login">
@@ -135,7 +137,8 @@
               <div class="row">
                 <div class="col-md-6">
                   <label>Date of Birth</label>
-                  <my-date-picker name="mydate" (dateChanged)="onDateChanged($event)" [options]="myDatePickerOptions" formControlName="dob" required></my-date-picker>
+                  <my-date-picker name="mydate" (dateChanged)="onDateChanged($event)" [options]="myDatePickerOptions" formControlName="dob"
+                    required></my-date-picker>
                 </div>
               </div>
             </div>

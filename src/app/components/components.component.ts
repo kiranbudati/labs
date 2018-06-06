@@ -9,18 +9,17 @@ import { Router } from '@angular/router';
 })
 
 export class ComponentsComponent implements OnInit {
-  components: any;
+  components: any; componentId: any;
   constructor(private appService: AppService, private router: Router) {
-    this.components = null;
+    this.components = null; this.componentId = 0;
   }
   viewComponent(id) {
     this.router.navigate(['/components', id]);
   }
-
   ngOnInit() {
-    this.appService.getComponets().subscribe((res) => {
-      this.getComp(res);
-    });
+    // this.appService.getComponets().subscribe((res) => {
+    //   this.getComp(res);
+    // });
   }
   getComp(data) {
     this.components = data;

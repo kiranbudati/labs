@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" *ngIf="authService.loggedIn()">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
@@ -18,14 +18,14 @@
         <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a routerLink="/forum">Forum</a>
         </li>
-        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <li *ngIf="authService.whoLogggedIn()=='maker'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
           <a routerLink="/components">Components</a>
         </li>
         <li class="dropdown">
           <img class="profile-pic img-circle dropdown-toggle" data-toggle="dropdown" src="../../assets/my.jpg">
           <ul class="dropdown-menu">
-            <li>
-              <a href="#">Profile</a>
+            <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+              <a href="/profile">Profile</a>
             </li>
             <li role="separator" class="divider"></li>
             <li>

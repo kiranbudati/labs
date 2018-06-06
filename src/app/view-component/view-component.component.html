@@ -1,1 +1,943 @@
-<div class="container"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <a (click)="backToComp()" class="pull-right back-to"> Back to components </a>
+        </div>
+        <div class="col-md-12" *ngIf="componentId == 1">
+            <h1 class="h1">Arduino Mega</h1>
+            <div class="panel panel-default panel"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <img class="main-image" src="../../assets/arduinoMega/arduinomega-main.png" alt="Avatar">
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/arduinoMega/arduinomega-main.png">
+                            <img class="responsive images" src="../../assets/arduinoMega/arduinomega-main.png" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/arduinoMega/1mega.jpg">
+                            <img class="responsive images" src="../../assets/arduinoMega/1mega.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/arduinoMega/2mega.png">
+                            <img class="responsive images" src="../../assets/arduinoMega/2mega.png" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/arduinoMega/3mega.jpg">
+                            <img class="responsive images" src="../../assets/arduinoMega/3mega.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                    <div class="col-md-3"></div>
+                    <button class="btn btn-primary add-button" type="submit">Add To Project</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <button class="btn btn-primary fav-button" type="submit">Add To Favourites</button>
+                    <br>
+                    <br>
+                    <span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <h4>Family:Development Boards </h4>
+                    <div class="panel panel-default panel"></div>
+                    <div class="form-group">
+                        <strong class="headings">Breif:</strong>
+                        <p class="text-area">
+                            As leaders in open-source development boards and software, the Arduino corporation is renowned for their premier board, the
+                            Arduino Uno. The Arduino Mega 2560 while slightly less well known, is the Uno’s bigger, faster
+                            brother. With all the capabilities of four Uno boards combined(Arduino UNO, Arduino Nano, Arduino
+                            Micro, Arduino Leonardo), the Arduino Mega 2560 is a beefy microcontroller board based around
+                            the powerful ATmega2560 microprocessor, and is capable of almost anything you can throw at it.
+                            The Arduino shields are preassembled PCBs that interface directly into the Mega’s headers and
+                            give the board incredible capabilities in a condensed package. Using a shield gives your Mega
+                            board display options, Wi-Fi connectivity or even video game emulation software with relative
+                            ease.
+                        </p>
+                        <strong class="headings">Features of an Arduino Mega are :</strong>
+                        <ul class="text-area">
+                            <li>Microcontroller : ATMega2560</li>
+                            <li>Operating Voltage 5V</li>
+                            <li>Input Voltage 7-12V (recommended)</li>
+                            <li>Input Voltage 6-20V (limit)</li>
+                            <li>Digital I/O Pins 54</li>
+                            <li>Analog Input Pins 16</li>
+                            <li>DC Current per I/O Pin 20 mA</li>
+                            <li>DC Current for 3.3V Pin 50 mA</li>
+                            <li>Flash Memory 256 KB of which 8 KB used by bootloader</li>
+                            <li>SRAM 8 KB EEPROM 4 KB</li>
+                            <li>Clock Speed 16 MHz</li>
+                            <li>LED_BUILTIN 13</li>
+                            <li>Length 101.52 mm</li>
+                            <li>Width 53.3 mm</li>
+                            <li>Weight 37 g</li>
+                        </ul>
+                        <strong class="headings">Advantages :</strong>
+                        <ul class="text-area">
+                            <li>Has a common IDE which is really easy to use.</li>
+                            <li>Has a lot of peripheral support - including 3rd parties.</li>
+                            <li>Has a lot of sample applications to start with.</li>
+                            <li>Does easily scale between different members of the family - including changing the microcontroller
+                                family the individual boards are based upon.</li>
+                            <li>Usually comes with their own "ecosystem", often including some IDE.</li>
+                        </ul>
+                        <strong class="headings">Disadvantages :</strong>
+                        <ul class="text-area">
+                            <li>Only 8 bit, not 32.</li>
+                            <li>Top clock speed is limited to 20 Mhz.</li>
+                            <li>Not many internal resources for SRAM, Flash, EEPROM.</li>
+                            <li>Relatively expensive.</li>
+                            <li>Requires effort to accomplish some tasks such as scheduling and database storage (Compared to
+                                Raspberry Pi).
+                            </li>
+                        </ul>
+                        <strong class="headings">Applications :</strong>
+                        <ul class="text-area">
+                            <li>High Speed Splash photography Rig</li>
+                            <li>Home automatic system (with more than four devices connected).</li>
+                            <li>Spy cams</li>
+                            <li>Arduino mail notifier</li>
+                            <li>3-Axis robot</li>
+                            <li>Tic-Tac toe board game with robotic arm</li>
+                            <li>Magnetic table hockey with light and sensors</li>
+                            <li>motion activated stairs and many more.</li>
+                        </ul>
+                        <strong class="headings">Major difference between Arduino Uno and Mega :</strong>
+                        <p class="text-area">
+                            The micro-controller on the Mega can run the same program as the micro-controller on the Uno, and the Mega has more SRAM
+                            than the Uno, not the opposite. The Arduino Mega 2560 is a fantastic option for use in prototyping
+                            with ease, especially for 3D printers and robotics, where the Uno just doesn’t hold up. The Mega
+                            is less common. Software on it is non-standard since most everyone works with the Uno. While
+                            the compiler takes care of many of the differences, you’re obviously working with a different
+                            device and coding for it. Ultimately, if you’re trying to decide, I’d recommend this: Start with
+                            the Uno. There is more code, more help online, more details on how to work it. If you reach your
+                            limits (hardware, memory space, etc), move on up to the Mega. By then, however, you’ll be comfortable
+                            with the code you’re writing, and more aware of the areas that need fixing or adjusting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="componentId == 2">
+            <h1 class="h1"> LCD Modules</h1>
+            <div class="panel panel-default panel"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <img class="main-image" alt="Raspberry Pi" src="../../assets/lcdDisplay/lcd-main.jpg">
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/lcdDisplay/lcd16x2Display.jpg">
+                            <img class="responsive images" src="../../assets/lcdDisplay/lcd16x2Display.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/lcdDisplay/lcd16_2.jpg">
+                            <img class="responsive images" src="../../assets/lcdDisplay/lcd16x2.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/lcdDisplay/lcd20_4.jpg">
+                            <img class="responsive images" src="../../assets/lcdDisplay/lcd20x4.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/lcdDisplay/lcd20_4Display.jpg">
+                            <img class="responsive images" src='../../assets/lcdDisplay/lcd20x4Display.jpg' alt="Forest">
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                    <div class="col-md-3"></div>
+                    <button class="btn btn-primary add-button" type="submit">Add To Project</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <button class="btn btn-primary fav-button" type="submit">Add To Favourites</button>
+                    <br>
+                    <br>
+                    <span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <h4>Family:Sensors And Modules </h4>
+                    <div class="panel panel-default panel"></div>
+                    <div class="form-group">
+                        <strong class="headings">Breif :</strong>
+                        <p class="text-area">
+                            LCD (Liquid Crystal Display) screen is an electronic display module and find a wide range of applications. A 16x2 LCD display
+                            is very basic module and is very commonly used in various devices and circuits. These modules
+                            are preferred over seven segments and other multi segment LEDs. A 16x2 LCD means it can display
+                            16 characters per line and there are 2 such lines. In this LCD each character is displayed in
+                            5x7 pixel matrix. This LCD has two registers, namely, Command and Data. The command register
+                            stores the command instructions given to the LCD. A command is an instruction given to LCD to
+                            do a predefined task like initializing it, clearing its screen, setting the cursor position,
+                            controlling display etc. The data register stores the data to be displayed on the LCD. The data
+                            is the ASCII value of the character to be displayed on the LCD. Click to learn more about internal
+                            structure of a LCD. The 20 x 4 display module is a slight variant of the 16 x 2 Module such that,
+                            a single 40 character (of which 16 are displayable) line is split up into 2 halves of 20 displayable
+                            characters each to make 4 lines. It has the disadvantage of not being able to scroll but looks
+                            better with 4 displayable lines.
+                        </p>
+                        <strong class="headings">Features of 16*2 LCD Display are :</strong>
+                        <ul class="text-area">
+                            <li>Alphanumeric LCD display module, meaning can display alphabets and numbers</li>
+                            <li>Each character is build by a 5×8 pixel box</li>
+                            <li>Consists of two rows and each row can print 16 characters.</li>
+                            <li>Operating Voltage is 4.7V to 5.3V</li>
+                            <li>Current consumption is 1mA without backlight</li>
+                            <li>Can work on both 8-bit and 4-bit mode</li>
+                            <li>It can also display any custom generated characters</li>
+                            <li>Available in Green and Blue Backlight</li>
+                        </ul>
+                        <strong class="headings">Features of 20*4 LCD Display are :</strong>
+                        <ul class="text-area">
+                            <li>Character LCD 20x4</li>
+                            <li>5x8 dots includes cursor</li>
+                            <li>Bulit-in controller (RW1063 or Equivalent)</li>
+                            <li>+5V power supply ( Also available for +3V)</li>
+                            <li>Negative voltage optional for +3V power supply</li>
+                            <li>1/16 duty cycle</li>
+                            <li>LED can be driven by PIN1, PIN2, PIN15, PIN16 or A and K</li>
+                            <li>Interface : WH2004G - 6800, WH2004G1 - SPI, WH2004G2 – I2C</li>
+                        </ul>
+                        <strong class="headings">Advantages :</strong>
+                        <ul class="text-area">
+                            <li>Produces very bright images due to high peak intensity. Very suitable for environments that are
+                                brightly lit.
+                            </li>
+                            <li>Produces considerably lower electric, magnetic and electromagnetic fields.</li>
+                            <li>No geometric distortion at the native resolution. Minor distortion can occur for other resolutions.</li>
+                            <li>Thin and compact with a flat screen</li>
+                            <li>Can be programmed using variety of programming languages.</li>
+                        </ul>
+                        <strong class="headings">Disadvantages :</strong>
+                        <ul class="text-area">
+                            <li>The aspect ratio and resolution are fixed. Black-Level Not proficient at producing black and
+                                very dark grays.
+                            </li>
+                            <li>Gray-Scale Have an irregular intensity scale and typically produce fewer than 256 discrete intensity
+                                levels.
+                            </li>
+                            <li>Viewing angles affect the brightness, contrast and colors shown. Wide angles can lead to contrast
+                                and color reversal.</li>
+                            <li>Other LCD Characteristics Bad Pixels Can have many weak or stuck pixels, which are permanently
+                                on or off.
+                            </li>
+                        </ul>
+                        <strong class="headings">Applications :</strong>
+                        <ul class="text-area">
+                            <li>Display screen in calculators. </li>
+                            <li>Instrument panel in lab instruments.</li>
+                            <li>In video games.</li>
+                            <li>To display temperature and humidity of current place.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="componentId == 3">
+            <h1 class="h1">Raspberry Pi</h1>
+            <div class="panel panel-default panel"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <img class="main-image" alt="Raspberry Pi" src="../../assets/RaspberryPi/Raspberry_Pi_3-main.png">
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/raspberry-pi-3.png">
+                            <img class="responsive images" src="../../assets/RaspberryPi/raspberry-pi-3.png" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/sdCard.jpg">
+                            <img class="responsive images" src="../../assets/RaspberryPi/sdCard.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/hdmi_cable.jpg">
+                            <img class="responsive images" src="../../assets/RaspberryPi/hdmi_cable.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/monitor.jpg">
+                            <img class="responsive images" src="../../assets/RaspberryPi/monitor.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                    <div class="col-md-3"></div>
+                    <button class="btn btn-primary add-button" type="submit">Add To Project</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <button class="btn btn-primary fav-button" type="submit">Add To Favourites</button>
+                    <br>
+                    <br>
+                    <span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <strong>More Images</strong>
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/keyboard.jpg">
+                            <img class="responsive images" src="../../assets/RaspberryPi/keyboard.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/RaspberryPi/mouse.jpg">
+                            <img class="responsive images" src="../../assets/RaspberryPi/mouse.jpg" alt="Forest">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <h4>Family:Microcontrollers </h4>
+                    <div class="panel panel-default panel"></div>
+                    <div class="form-group">
+                        <strong class="headings">Breif:</strong>
+                        <p class="text-area">
+                            The Raspberry Pi is a low cost, credit-card sized computer that plugs into a computer monitor or TV ,uses a standard keyboard
+                            and mouse. It’s capable of doing everything you’d expect a desktop computer to do, from browsing
+                            the internet and playing high-definition video, to making spreadsheets, word-processing, and
+                            playing games.
+                        </p>
+                        <strong class="headings">Features of an Raspberry Pi are :</strong>
+                        <ul class="text-area">
+                            <li>CPU: Quad-core 64-bit ARM Cortex A53 clocked at 1.2 GHz</li>
+                            <li>GPU: 400MHz VideoCore IV multimedia </li>
+                            <li>Memory: 1GB LPDDR2-900 SDRAM (i.e. 900MHz) </li>
+                            <li>USB ports: 4 </li>
+                            <li>Video outputs: HDMI, composite video (PAL and NTSC) via 3.5 mm jack </li>
+                            <li>Network: 10/100Mbps Ethernet and 802.11n Wireless LAN </li>
+                            <li>Peripherals: 17 GPIO plus specific functions, and HAT ID bus </li>
+                            <li>DC Current for 3.3V Pin 50 mA</li>
+                            <li>Bluetooth: 4.1 </li>
+                            <li>Power source: 5 V via MicroUSB or GPIO header </li>
+                            <li>Size: 85.60mm × 56.5mm </li>
+                            <li>Weight: 45g</li>
+                        </ul>
+                        <strong class="headings">Things required to start a Raspberry-Pi : </strong>
+                        <ul class="text-area">
+                            <li>Monitor</li>
+                            <li>HDMI Cable</li>
+                            <li>Mouse</li>
+                            <li>Keyboard</li>
+                            <li>Power Supply</li>
+                            <li>SD Card</li>
+                        </ul>
+                        <strong class="headings">Advantages :</strong>
+                        <ul class="text-area">
+                            <li>As small as a credit card</li>
+                            <li>Works similar to a computer while external devices are connected.</li>
+                            <li>Acts as a Low cost server to handle light internal or web-traffic.</li>
+                            <li>Less cost as compared to a computer.</li>
+                            <li>Can be programmed using variety of programming languages.</li>
+                        </ul>
+                        <strong class="headings">Disadvantages :</strong>
+                        <ul class="text-area">
+                            <li>There are some limitations due to its hardware. If the CPU is busy, then interfacing with hardware
+                                can be delayed.</li>
+                            <li>It cannot run X86 operating systems and Some common ones like Windows and Linux distros are not
+                                compatible.
+                            </li>
+                            <li>Some applications which require high demands on CPU processing are off-limits.</li>
+                            <li></li>
+                            <li>Its processing speed is slower than a normal computer.</li>
+                        </ul>
+                        <strong class="headings">Applications :</strong>
+                        <ul class="text-area">
+                            <li>Media Streamer </li>
+                            <li>Tablet Computer</li>
+                            <li>Home Automation</li>
+                            <li>Internet Radio</li>
+                            <li>Controlling robots</li>
+                            <li>Cosmic Computer</li>
+                            <li>Hunting for meteorites</li>
+                        </ul>
+                        <strong class="headings">When to use / not use the Raspberry Pi : :</strong>
+                        <p class="text-area">
+                            If you project has very limited hardware interaction but is slightly complex on the software side or need to be connected
+                            to internet then you should just go with Raspberry Pi. Also if you want to program using variety
+                            of programming languages (not limited to C/C++), then you should choose Raspberry Pi. On the
+                            other hand, if you project requires a lot of hardware interaction and need to read data from
+                            lot of sensors or need to control lot of devices, then Raspberry Pi may not be best choice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="componentId == 4">
+            <h1 class="h1">Motor Driver Module (L298N)</h1>
+            <div class="panel panel-default panel"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <img class="main-image" alt="Raspberry Pi" src="../../assets/Motor_Driver/motordriver-main.jpg">
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/Motor_Driver/1motor.jpg">
+                            <img class="responsive images" src="../../assets/Motor_Driver/1motor.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/Motor_Driver/2motor.jpg">
+                            <img class="responsive images" src="../../assets/Motor_Driver/2motor.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/Motor_Driver/3motor.jpg">
+                            <img class="responsive images" src="../../assets/Motor_Driver/3motor.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/Motor_Driver/4motor.jpg">
+                            <img class="responsive images" src="../../assets/Motor_Driver/4motor.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                    <div class="col-md-3"></div>
+                    <button class="btn btn-primary add-button" type="submit">Add To Project</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <button class="btn btn-primary fav-button" type="submit">Add To Favourites</button>
+                    <br>
+                    <br>
+                    <span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <h4>Family: Motors and Motor Drivers </h4>
+                    <div class="panel panel-default panel"></div>
+                    <div class="form-group">
+                        <strong class="headings">Breif:</strong>
+                        <p class="text-area">
+                            The L298 Driver is a high voltage, high current dual ful bridge driver designed to accept standard TTL logic levels and drive
+                            inductive loads such relays, solenoids, DC and stepping motors. Two enable inputs are provided
+                            to enable or disable the device independently of the input signals. The emmiters of the lower
+                            transistors of each bridge are connected together the corresponding external terminal can be
+                            used for the connection of an external sensing resistor.
+                        </p>
+                        <strong class="headings">Features of L298N are :</strong>
+                        <ul class="text-area">
+                            <li>Operating supply voltage up to 46 V</li>
+                            <li>Total DC current up to 4 A</li>
+                            <li>Low saturation voltage</li>
+                            <li>Overtemperature protection</li>
+                            <li>LOGICAL "0" INPUT VOLTAGE UP TO 1.5 V (HIGH NOISE IMMUNITY)</li>
+                            <li>Two motor direction indicator LEDs</li>
+                            <li>An onboard user-accessable 5V low-dropout regulator</li>
+                            <li>Schottky EMF-protection diodes</li>
+                            <li>Screw-terminals for power and motor connections</li>
+                            <li>High quality PCB FR4 Grade with FPT Certified</li>
+                        </ul>
+                        <strong class="headings">Advantages :</strong>
+                        <ul class="text-area">
+                            <li>The L298 chip is the bigger brother to the L293 chip (a popular small-motor driver IC), but the
+                                L298 handles more current, and more voltage - just what you need for those robots that need
+                                more power!</li>
+                            <li>There are many ways to strengthen (”buffer”) a signal so it’s strong enough to drive a large
+                                load like a motor. Transistor H bridge circuits, buffer chips, and dedicated motor driving
+                                chips are all suitable candidates, with their own benefits and limitations.
+                            </li>
+                            <li>Adding a low-drop out regulator lets you tap off 5V for any other circuitry you may want to drive,
+                                and the indicator LEDs are always very useful when monitoring the behaviors of circuit.</li>
+                            <li>Less cost as compared to a computer.</li>
+                            <li>Can be programmed using variety of programming languages.</li>
+                        </ul>
+                        <strong class="headings">Disadvantages :</strong>
+                        <ul class="text-area">
+                            <li>There are some limitations due to its hardware. If the CPU is busy, then interfacing with hardware
+                                can be delayed.</li>
+                            <li>It cannot run X86 operating systems and Some common ones like Windows and Linux distros are not
+                                compatible.
+                            </li>
+                            <li>Some applications which require high demands on CPU processing are off-limits.</li>
+                            <li></li>
+                            <li>Its processing speed is slower than a normal computer.</li>
+                        </ul>
+                        <strong class="headings">Applications :</strong>
+                        <ul class="text-area">
+                            <li>Media Streamer </li>
+                            <li>Tablet Computer</li>
+                            <li>Home Automation</li>
+                            <li>Internet Radio</li>
+                            <li>Controlling robots</li>
+                            <li>Cosmic Computer</li>
+                            <li>Hunting for meteorites</li>
+                        </ul>
+                        <strong class="headings">When to use / not use the Raspberry Pi : :</strong>
+                        <p class="text-area">
+                            If you project has very limited hardware interaction but is slightly complex on the software side or need to be connected
+                            to internet then you should just go with Raspberry Pi. Also if you want to program using variety
+                            of programming languages (not limited to C/C++), then you should choose Raspberry Pi. On the
+                            other hand, if you project requires a lot of hardware interaction and need to read data from
+                            lot of sensors or need to control lot of devices, then Raspberry Pi may not be best choice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="componentId == 5">
+            <h1 class="h1">Noir Pi Camera</h1>
+            <div class="panel panel-default panel"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <img class="main-image" alt="Raspberry Pi" src="../../assets/noirPiCamera/noir-main.jpg">
+                    <br>
+                    <br>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/noirPiCamera/noirPiCam.jpg">
+                            <img class="responsive images" src="../../assets/noirPiCamera/noirPiCam.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/noirPiCamera/1noir.jpg">
+                            <img class="responsive images" src="../../assets/noirPiCamera/1noir.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/noirPiCamera/2noir.jpg">
+                            <img class="responsive images" src="../../assets/noirPiCamera/2noir.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a target="_blank" href="../../assets/noirPiCamera/3noir.jpg">
+                            <img class="responsive images" src="../../assets/noirPiCamera/3noir.jpg" alt="Forest">
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                    <br>
+                    <div class="col-md-3"></div>
+                    <button class="btn btn-primary add-button" type="submit">Add To Project</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+                    <button class="btn btn-primary fav-button" type="submit">Add To Favourites</button>
+                    <br>
+                    <br>
+                    <span class="heading">Rating</span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <p>4.1 average based on 254 reviews.</p>
+                    <div class="row">
+                        <div class="side">
+                            <div>5 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-5"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>150</div>
+                        </div>
+                        <div class="side">
+                            <div>4 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-4"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>63</div>
+                        </div>
+                        <div class="side">
+                            <div>3 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-3"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>15</div>
+                        </div>
+                        <div class="side">
+                            <div>2 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-2"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>6</div>
+                        </div>
+                        <div class="side">
+                            <div>1 star</div>
+                        </div>
+                        <div class="middle">
+                            <div class="bar-container">
+                                <div class="bar-1"></div>
+                            </div>
+                        </div>
+                        <div class="side right">
+                            <div>20</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="panel panel-default panel"></div>
+                </div>
+                <div class="col-md-6">
+                    <h2>Description</h2>
+                    <h4>Family:Sensors And Modules </h4>
+                    <div class="panel panel-default panel"></div>
+                    <div class="form-group">
+                        <strong class="headings">Breif:</strong>
+                        <p class="text-area">
+                            he Raspberry Pi NoIR Camera v2 is the official “night vision” camera board released by the Raspberry Pi Foundation. It attaches
+                            to Pi by way of one of the small sockets on the board upper surface and uses the dedicated CSI
+                            interface, designed especially for interfacing to cameras.
+                        </p>
+                        <strong class="headings">Features of Noir Pi Camera are :</strong>
+                        <ul class="text-area">
+                            <li>Fixed focus lens on-board </li>
+                            <li>8 megapixel native resolution sensor-capable of 3280 x 2464 pixel static images </li>
+                            <li>Supports 1080p30, 720p60 and 640x480p90 video </li>
+                            <li>Size 25mm x 23mm x 9mm </li>
+                            <li>Weight just over 3g </li>
+                            <li>Connects to the Raspberry Pi board via a short ribbon cable (supplied) </li>
+                            <li>Camera v2 is supported in the latest version of Raspbian, Raspberry Pi's preferred operating
+                                system
+                            </li>
+                        </ul>
+                        <strong class="headings">Advantages :</strong>
+                        <ul class="text-area">
+                            <li>Connects Directly to GPU, so capture and encoding into high definition video is performed without
+                                CPU assistance.</li>
+                            <li>NoIR lacks the infrared filter this enables better low light capture i.e. night vision when a
+                                dark room is illuminated with infrared LEDs.</li>
+                            <li>Pi Cam has its own port on the Pi whereas webcam will take an extra port on the raspberry Pi.</li>
+                            <li>As Pi camera is made specially for the raspberry Pi, its performance is much better and faster
+                                than a normal web cam.</li>
+                        </ul>
+                        <strong class="headings">Disadvantages :</strong>
+                        <ul class="text-area">
+                            <li>As the NoIR camera doesn’t have an IR filter, it doesn’t provide accurate colours during day
+                                time use or a room illuminated with filament bulbs.</li>
+                            <li>NoIR cannot be used in other devices apart from raspberry Pi as it is designed only for Raspberry
+                                Pi.
+                            </li>
+                            <li>We cannot move NoIR camera because of its ribbon cable, but webcam can be taken to a particular
+                                distance.
+                            </li>
+                        </ul>
+                        <strong class="headings">Applications :</strong>
+                        <ul class="text-area">
+                            <li>Used for projects involved in dim or no light with the raspberry pi.</li>
+                            <li>Can take HD videos and even still photos in dim light.</li>
+                            <li>Camera effects e.g. black and white IR photos.</li>
+                            <li>Specialist archaeological applications.</li>
+                            <li>Specialist botanical applications.</li>
+                            <li>Wildlife photography (nocturnal with IR lighting).</li>
+                        </ul>
+                        <strong class="headings">Comparision Between Noir Pi and Web Cam :</strong>
+                        <ul class="text-area">
+                            <li>The NoIR Cam connects directly to the GPU so capture and encoding into high def video is performed
+                                without CPU assistance. If you use a USB webcam there is no GPU assistance so all work is
+                                handled by the CPU to communicate with the device to extract frame data at the cost of higher
+                                CPU load.</li>
+                            <li>The other advantage of using a USB webcam is movability since the NoIR cam can't exactly go very
+                                far with it's ribbon cable.</li>
+                            <li>The NoIR lacks the infrared filter this enables better low light capture night vision when a
+                                dark room is illuminated with infrared LEDs. Due to fact that CMOS imaging sensors (and CCD)
+                                are highly sensitive to infrared light the NoIR camera does not provide accurate colours
+                                during day time use or a room illuminated with filament bulbs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="!componentId">
+            <h1 style="text-align: center">No Component Found</h1>
+        </div>
+    </div>
+</div>

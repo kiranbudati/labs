@@ -97,7 +97,12 @@ router.post('/login', (req, res) => {
             }
             else {
                 var token = jwt.sign({ userId: users._id }, config.secret, { expiresIn: '24h' })
-                res.json({ success: true, message: 'logged in successfully.', token: token, user: users });
+                res.json({
+                    success: true, type: 'maker', message: 'logged in successfully.', token: token,
+                    user: {
+                        id: users._id, fullname: users.fullname
+                    }
+                });
             }
         }
         else {

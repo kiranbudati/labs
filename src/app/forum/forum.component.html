@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-12">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -8,7 +8,7 @@
         <li class="breadcrumb-item active">Forum</li>
       </ol>
     </div>
-  </div>
+  </div> -->
   <div class="row">
     <!--Left side content-->
     <div class="col-md-8 col-xs-12">
@@ -31,35 +31,37 @@
         <div *ngIf="allQuestions">
           <div class="col-md-12" *ngFor="let question of pagedItems | reverse">
             <div class="recent-questions">
-              <div class="question"><a (click)="viewQuestion(question._id)">{{question.questionTitle}}</a></div>
-              <small class="form-text text-muted">
-                <a *ngIf="question.askAnonymously==true">Anonymous</a>&nbsp;
-                <a *ngIf="question.askAnonymously==false">{{question.askedBy}}</a>&nbsp;
-              </small>
-              <small class="form-text text-muted">{{question.createdAt | date}}</small>
-              <div class="description" [innerHTML]="question.questionDescription">
-                <!-- {{question.questionDescription}} -->
-              </div>
-              <div class="question-footer">
-                <div class="rec-likes">
-                  <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                  <span *ngIf="question.likes!=0">{{question.likes}}</span>
-                </div>
-                <div class="rec-dislikes">
-                  <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
-                  <span *ngIf="question.dislikes!=0">{{question.dislikes}}</span>
-                </div>
-                <div class="rec-commentts">
-                  <i class="fa fa-comments-o" aria-hidden="true"></i>
-                  <span *ngIf="question.likes!=0">{{question.likes}}</span>
-                </div>
-              </div>
-              <div class="tags">
-                Domain:
-                <span>{{question.domain}} </span>
-
-                Sub Domain:
-                <span>{{question.subDomain}} </span>
+              <div class="rec-ques">
+                  <div class="question"><a (click)="viewQuestion(question._id)">{{question.questionTitle}}</a></div>
+                  <small class="form-text text-muted">
+                    <a *ngIf="question.askAnonymously==true">Anonymous</a>&nbsp;
+                    <a *ngIf="question.askAnonymously==false">{{question.askedBy}}</a>&nbsp;
+                  </small>
+                  <small class="form-text text-muted">{{question.createdAt | date}}</small>
+                  <div class="description" [innerHTML]="question.questionDescription">
+                    <!-- {{question.questionDescription}} -->
+                  </div>
+                  <div class="question-footer">
+                    <div class="rec-likes">
+                      <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                      <span *ngIf="question.likes!=0">{{question.likes}}</span>
+                    </div>
+                    <div class="rec-dislikes">
+                      <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
+                      <span *ngIf="question.dislikes!=0">{{question.dislikes}}</span>
+                    </div>
+                    <div class="rec-commentts">
+                      <i class="fa fa-comments-o" aria-hidden="true"></i>
+                      <span *ngIf="question.likes!=0">{{question.likes}}</span>
+                    </div>
+                  </div>
+                  <div class="tags">
+                    Domain:
+                    <span>{{question.domain}} </span>
+    
+                    Sub Domain:
+                    <span>{{question.subDomain}} </span>
+                  </div>
               </div>
             </div>
           </div>
@@ -92,7 +94,7 @@
       <div class="right-tab">
         <div class="row">
           <div class="col-md-12">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
               <div class="panel-heading">Popular Questions</div>
               <div class="panel-body">
                 <div class="popular-questions">
@@ -101,7 +103,7 @@
                       <div class="popular-question">
                         <a>{{question.questionTitle}}</a>
                       </div>
-                      <div class="row">
+                      <!-- <div class="row">
                         <div class="col-md-12">
                           <div id="popular-footer">
                             <div id="likes">
@@ -124,7 +126,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>

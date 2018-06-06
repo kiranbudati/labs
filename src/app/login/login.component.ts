@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
           this.singupForm.patchValue(this.checkUser);
           this.signupStatus = 'incomplete';
         } else {
-          this.authService.storeUserData(this.message.token, this.message.user);
+          this.authService.storeUserData(this.message.token, this.message.user, this.message.type);
           // setTimeout(() => {
           this.router.navigate(['/dashboard']);
           // }, 2000);
